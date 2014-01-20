@@ -7,7 +7,6 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#include "BrowserControllerWindowController.h"
 #include "MainController.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>

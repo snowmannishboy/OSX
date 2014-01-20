@@ -663,15 +663,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="659" height="414"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView focusRingType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ln-QP-XOz">
+                    <scrollView focusRingType="none" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ln-QP-XOz">
                         <rect key="frame" x="20" y="20" width="619" height="374"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" id="hV7-oO-tgv">
-                            <rect key="frame" x="1" y="1" width="617" height="372"/>
+                            <rect key="frame" x="0.0" y="0.0" width="619" height="374"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <collectionView selectable="YES" id="Eb9-Fd-MrZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="617" height="372"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="619" height="374"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <connections>
@@ -702,11 +702,15 @@
                             <action selector="add_directory_clicked:" target="3gj-Rq-bm0" id="fwW-B7-lms"/>
                         </connections>
                     </button>
-                    <ikImageBrowserView hidden="YES" autoresizesSubviews="NO" zoomValue="0.47328639030456543" translatesAutoresizingMaskIntoConstraints="NO" id="woV-IG-VgM">
+                    <ikImageBrowserView hidden="YES" zoomValue="0.47328639030456543" animates="YES" translatesAutoresizingMaskIntoConstraints="NO" id="woV-IG-VgM">
                         <rect key="frame" x="20" y="80" width="619" height="314"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <autoresizingMask key="contentResizingMask" heightSizable="YES"/>
                         <size key="cellSize" width="100" height="100"/>
+                        <connections>
+                            <outlet property="_dataSource" destination="c8f-e8-SkH" id="OtU-aK-Bu8"/>
+                            <outlet property="_delegate" destination="c8f-e8-SkH" id="VIv-4B-Hv5"/>
+                        </connections>
                     </ikImageBrowserView>
                 </subviews>
                 <constraints>
@@ -732,6 +736,8 @@
                 <outlet property="browse_view" destination="woV-IG-VgM" id="r8o-O1-RRV"/>
                 <outlet property="button" destination="Ef7-oO-jdb" id="HSb-7P-nqx"/>
                 <outlet property="directory_view" destination="Eb9-Fd-MrZ" id="tm8-mr-UoL"/>
+                <outlet property="imagesController" destination="c8f-e8-SkH" id="Efi-ID-Utb"/>
+                <outlet property="scroll_view" destination="2Ln-QP-XOz" id="mvH-q7-6gz"/>
                 <outlet property="window" destination="371" id="RZZ-vC-KH2"/>
             </connections>
         </customObject>
@@ -746,5 +752,10 @@
                 <binding destination="3gj-Rq-bm0" name="selectionIndexes" keyPath="selected" id="WPc-70-aol"/>
             </connections>
         </arrayController>
+        <customObject id="c8f-e8-SkH" customClass="BrowserControllerWindowController">
+            <connections>
+                <outlet property="mImageBrowser" destination="woV-IG-VgM" id="FFl-Cw-iaV"/>
+            </connections>
+        </customObject>
     </objects>
 </document>

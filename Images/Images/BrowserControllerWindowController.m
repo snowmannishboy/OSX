@@ -50,13 +50,11 @@
 
 
 
-@interface BrowserControllerWindowController ()
-
-@end
-
 @implementation BrowserControllerWindowController
 
+
 @synthesize mImageBrowser;
+@synthesize mImages;
 
 - (id)initWithWindow:(NSWindow *)window
 {
@@ -83,8 +81,6 @@
     
     mImportedImages = [[NSMutableArray alloc] init];
     
-    
-    
     [mImageBrowser setAnimates:YES];
     
 }
@@ -99,6 +95,11 @@
     
     [mImageBrowser reloadData];
     
+}
+
+- (void) removeAll {
+    [mImages removeAllObjects];
+    [mImageBrowser reloadData];
 }
 
 - (NSUInteger) numberOfItemsInImageBrowser:(IKImageBrowserView *) view
@@ -149,7 +150,6 @@ static NSArray *openFiles()
 - (void) addAnImageWithPath:(NSString *) path
 
 {
-    NSLog(@"Picture - %@", path);
     
     ImageObject *p;
     
@@ -160,6 +160,11 @@ static NSArray *openFiles()
     [mImportedImages addObject:p];
     
 }
+
+- (void) refresh {
+    NSLog(@"%@", mImageBrowser);
+}
+
 
 - (void) addImagesWithPath:(NSString *) path recursive:(BOOL) recursive
 
@@ -259,4 +264,11 @@ static NSArray *openFiles()
     
 }
 
+- (NSMutableArray*) mImportedImages {
+    return mImportedImages;
+}
+
+- (void) setMImportedImages:(NSMutableArray *)images {
+    mImportedImages = images;
+}
 @end

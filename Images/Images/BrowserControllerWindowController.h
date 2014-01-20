@@ -14,10 +14,23 @@
     NSMutableArray* mImportedImages;
 }
 
+-(void) removeAll;
+
+- (void) addAnImageWithPath:(NSString *) path;
+
+- (void) refresh;
+
+- (NSMutableArray*) mImportedImages;
+
+- (void) updateDatasource;
+
+- (void) setMImportedImages: (NSMutableArray*) images;
+
 -(IBAction) addImageButtonClicked:(id) sender;
 
-@property (weak) IBOutlet IKImageBrowserView *mImageBrowser;
+@property IBOutlet IKImageBrowserView *mImageBrowser;
 
+@property NSMutableArray* mImages;
 
 
 @end

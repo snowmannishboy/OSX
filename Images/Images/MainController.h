@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
+#include "BrowserControllerWindowController.h"
 
 static @interface MainController : NSWindowController {
  
@@ -36,7 +37,11 @@ static @interface MainController : NSWindowController {
 
 @property IBOutlet NSCollectionView *directory_view;
 
+@property IBOutlet NSScrollView* scroll_view;
+
 @property IBOutlet IKImageBrowserView* browse_view;
+
+@property IBOutlet BrowserControllerWindowController* imagesController;
 
 @property IBOutlet NSArrayController* arrayController;
 

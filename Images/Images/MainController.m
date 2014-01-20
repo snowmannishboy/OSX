@@ -20,14 +20,36 @@
 @synthesize directory_view = _directory_view;
 @synthesize button = _button;
 @synthesize arrayController;
+@synthesize imagesController;
+@synthesize scroll_view;
 
 
 - (void) performClick:(id)sender {
-    NSLog(@"%@", _directory_view);
+    NSLog(@"%@", imagesController);
     [_directory_view setHidden: YES];
     view = browse;
     [browse_view setHidden:NO];
     [_button setTitle:@"Go Back"];
+    [scroll_view setHidden:YES];
+    ClickableBox* box_clicked = (ClickableBox*) sender;
+    
+    NSError* currentError = nil;
+    
+    NSArray* paths = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:[box_clicked directory] error:&currentError];
+    
+    [paths enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSString* path = (NSString*) obj;
+        NSMutableString* actual_path = [[NSMutableString alloc] init];
+        [actual_path appendString:[box_clicked directory]];
+        [actual_path appendString:@"/"];
+        [actual_path appendString:path];
+        [imagesController addAnImageWithPath:actual_path];
+    }];
+    
+    [imagesController updateDatasource];
+    [browse_view setAnimates:YES];
+    
+    
 }
 
 - (id)initWithWindow:(NSWindow *)window
@@ -73,9 +95,12 @@
     }
     else if (view == browse) {
         [browse_view setHidden: YES];
+        [scroll_view setHidden:NO];
         view = directory;
         [_directory_view setHidden:NO];
         [_button setTitle:@"Add Directories"];
+        [imagesController removeAll];
+        [imagesController updateDatasource];
     }
     
 }
