@@ -45,9 +45,8 @@
         [actual_path appendString:path];
         [imagesController addAnImageWithPath:actual_path];
     }];
-    
-    [imagesController updateDatasource];
     [browse_view setAnimates:YES];
+    [imagesController updateDatasource];
     
     
 }

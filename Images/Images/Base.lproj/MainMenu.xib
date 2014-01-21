@@ -663,6 +663,37 @@
                 <rect key="frame" x="0.0" y="0.0" width="659" height="414"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <scrollView hidden="YES" fixedFrame="YES" horizontalLineScroll="120" horizontalPageScroll="10" verticalLineScroll="120" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6f-9v-37j">
+                        <rect key="frame" x="19" y="79" width="621" height="316"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <clipView key="contentView" ambiguous="YES" misplaced="YES" copiesOnScroll="NO" id="yut-qC-A20">
+                            <rect key="frame" x="1" y="1" width="619" height="314"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <ikImageBrowserView hidden="YES" fixedFrame="YES" zoomValue="0.47328639030456543" allowsMultipleSelection="NO" animates="YES" translatesAutoresizingMaskIntoConstraints="NO" id="woV-IG-VgM">
+                                    <rect key="frame" x="0.0" y="0.0" width="619" height="314"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <autoresizingMask key="contentResizingMask" heightSizable="YES"/>
+                                    <size key="cellSize" width="100" height="100"/>
+                                    <connections>
+                                        <outlet property="_dataSource" destination="c8f-e8-SkH" id="OtU-aK-Bu8"/>
+                                        <outlet property="_delegate" destination="c8f-e8-SkH" id="VIv-4B-Hv5"/>
+                                    </connections>
+                                </ikImageBrowserView>
+                            </subviews>
+                        </clipView>
+                        <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="g9I-T7-K7k">
+                            <rect key="frame" x="1" y="299" width="619" height="16"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="CdG-4l-1cs">
+                            <rect key="frame" x="604" y="1" width="16" height="314"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <connections>
+                            <binding destination="3gj-Rq-bm0" name="hidden" keyPath="self.browse_view.hidden" id="Nqo-Su-lFC"/>
+                        </connections>
+                    </scrollView>
                     <scrollView focusRingType="none" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ln-QP-XOz">
                         <rect key="frame" x="20" y="20" width="619" height="374"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -702,26 +733,12 @@
                             <action selector="add_directory_clicked:" target="3gj-Rq-bm0" id="fwW-B7-lms"/>
                         </connections>
                     </button>
-                    <ikImageBrowserView hidden="YES" zoomValue="0.47328639030456543" animates="YES" translatesAutoresizingMaskIntoConstraints="NO" id="woV-IG-VgM">
-                        <rect key="frame" x="20" y="80" width="619" height="314"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <autoresizingMask key="contentResizingMask" heightSizable="YES"/>
-                        <size key="cellSize" width="100" height="100"/>
-                        <connections>
-                            <outlet property="_dataSource" destination="c8f-e8-SkH" id="OtU-aK-Bu8"/>
-                            <outlet property="_delegate" destination="c8f-e8-SkH" id="VIv-4B-Hv5"/>
-                        </connections>
-                    </ikImageBrowserView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="2Ln-QP-XOz" firstAttribute="top" secondItem="372" secondAttribute="top" constant="20" id="37A-Jo-tTW"/>
-                    <constraint firstItem="woV-IG-VgM" firstAttribute="top" secondItem="372" secondAttribute="top" constant="20" id="Atm-Gu-rB2"/>
                     <constraint firstItem="2Ln-QP-XOz" firstAttribute="leading" secondItem="372" secondAttribute="leading" constant="20" id="EZc-Wg-AJZ"/>
-                    <constraint firstItem="woV-IG-VgM" firstAttribute="leading" secondItem="372" secondAttribute="leading" constant="20" id="GZM-UR-OEf"/>
                     <constraint firstAttribute="trailing" secondItem="2Ln-QP-XOz" secondAttribute="trailing" constant="20" id="Oag-OQ-T6Z"/>
                     <constraint firstAttribute="bottom" secondItem="Ef7-oO-jdb" secondAttribute="bottom" constant="40" id="gdE-4v-VVB"/>
-                    <constraint firstAttribute="bottom" secondItem="woV-IG-VgM" secondAttribute="bottom" constant="80" id="jSI-Ea-S2I"/>
-                    <constraint firstAttribute="trailing" secondItem="woV-IG-VgM" secondAttribute="trailing" constant="20" id="tjZ-QR-Orh"/>
                     <constraint firstAttribute="bottom" secondItem="2Ln-QP-XOz" secondAttribute="bottom" constant="20" id="vnp-GK-gEh"/>
                     <constraint firstItem="Ef7-oO-jdb" firstAttribute="leading" secondItem="372" secondAttribute="leading" constant="40" id="zQn-Jo-WcN"/>
                 </constraints>
