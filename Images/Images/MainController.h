@@ -26,14 +26,22 @@ static @interface MainController : NSWindowController {
     NSButton* _button;
     NSCollectionView* _directory_view;
     
+    NSManagedObjectContext* _context;
     
 }
 
+
 - (void)performClick:(id)sender;
+
+- (void) addObjects;
 
 - (IBAction)add_directory_clicked:(id)sender;
 
+- (IBAction) delete_button_clicked: (id) sender;
+
 @property IBOutlet NSButton* button;
+
+@property IBOutlet NSButton* deleteButton;
 
 @property IBOutlet NSCollectionView *directory_view;
 
@@ -46,5 +54,7 @@ static @interface MainController : NSWindowController {
 @property IBOutlet NSArrayController* arrayController;
 
 @property IBOutlet NSImageView* image_view;
+
++ (void) setManagedObjectContext: (NSManagedObjectContext*) context;
 
 @end

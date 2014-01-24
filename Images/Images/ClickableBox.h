@@ -12,15 +12,9 @@
 @interface ClickableBox : NSBox {
 
     NSString* _directory;
-
-    id _delegate;
-    
 }
 
-
 @property NSString* directory;
-
-@property IBOutlet id delegate;
 
 + (void) setMainController: (id) controller;
 

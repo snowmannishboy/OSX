@@ -13,10 +13,8 @@ static id mainController;
 @implementation ClickableBox
 
 @synthesize directory = _directory;
-@synthesize delegate = _delegate;
 
-- (id)initWithFrame:(NSRect)frame
-{
+- (id)initWithFrame:(NSRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code here.
@@ -24,8 +22,7 @@ static id mainController;
     return self;
 }
 
-- (void)drawRect:(NSRect)dirtyRect
-{
+- (void)drawRect:(NSRect)dirtyRect{
 	[super drawRect:dirtyRect];
 	
     // Drawing code here.

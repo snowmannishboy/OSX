@@ -13,10 +13,12 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize managedObjectContext = _managedObjectContext;
+@synthesize mainController;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    [MainController setManagedObjectContext:_managedObjectContext];
+    [mainController addObjects];
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "org.rnovak.Images" in the user's Application Support directory.

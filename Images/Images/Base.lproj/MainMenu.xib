@@ -663,15 +663,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="659" height="414"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView hidden="YES" fixedFrame="YES" horizontalLineScroll="120" horizontalPageScroll="10" verticalLineScroll="120" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6f-9v-37j">
-                        <rect key="frame" x="19" y="79" width="621" height="316"/>
+                    <scrollView hidden="YES" horizontalLineScroll="120" horizontalPageScroll="10" verticalLineScroll="120" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6f-9v-37j">
+                        <rect key="frame" x="19" y="61" width="621" height="334"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <clipView key="contentView" ambiguous="YES" misplaced="YES" copiesOnScroll="NO" id="yut-qC-A20">
-                            <rect key="frame" x="1" y="1" width="619" height="314"/>
+                        <clipView key="contentView" copiesOnScroll="NO" id="yut-qC-A20">
+                            <rect key="frame" x="1" y="1" width="619" height="332"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <ikImageBrowserView hidden="YES" fixedFrame="YES" zoomValue="0.47328639030456543" allowsMultipleSelection="NO" animates="YES" translatesAutoresizingMaskIntoConstraints="NO" id="woV-IG-VgM">
-                                    <rect key="frame" x="0.0" y="0.0" width="619" height="314"/>
+                                <ikImageBrowserView hidden="YES" fixedFrame="YES" zoomValue="0.45711621642112732" allowsMultipleSelection="NO" animates="YES" translatesAutoresizingMaskIntoConstraints="NO" id="woV-IG-VgM">
+                                    <rect key="frame" x="0.0" y="0.0" width="619" height="332"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <autoresizingMask key="contentResizingMask" heightSizable="YES"/>
                                     <size key="cellSize" width="100" height="100"/>
@@ -683,11 +683,11 @@
                             </subviews>
                         </clipView>
                         <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="g9I-T7-K7k">
-                            <rect key="frame" x="1" y="299" width="619" height="16"/>
+                            <rect key="frame" x="1" y="317" width="619" height="16"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="CdG-4l-1cs">
-                            <rect key="frame" x="604" y="1" width="16" height="314"/>
+                            <rect key="frame" x="604" y="1" width="16" height="332"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                         <connections>
@@ -695,14 +695,14 @@
                         </connections>
                     </scrollView>
                     <scrollView focusRingType="none" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ln-QP-XOz">
-                        <rect key="frame" x="20" y="20" width="619" height="374"/>
+                        <rect key="frame" x="20" y="61" width="619" height="333"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <clipView key="contentView" id="hV7-oO-tgv">
-                            <rect key="frame" x="0.0" y="0.0" width="619" height="374"/>
+                            <rect key="frame" x="0.0" y="0.0" width="619" height="333"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <collectionView selectable="YES" id="Eb9-Fd-MrZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="619" height="374"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="619" height="333"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <connections>
@@ -723,7 +723,7 @@
                         </scroller>
                     </scrollView>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ef7-oO-jdb">
-                        <rect key="frame" x="34" y="33" width="128" height="32"/>
+                        <rect key="frame" x="14" y="13" width="128" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Add Directory" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="zNg-aw-qul">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -733,14 +733,31 @@
                             <action selector="add_directory_clicked:" target="3gj-Rq-bm0" id="fwW-B7-lms"/>
                         </connections>
                     </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="h51-LB-Obd">
+                        <rect key="frame" x="564" y="13" width="81" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Delete" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UBL-8y-6Pq">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="delete_button_clicked:" target="3gj-Rq-bm0" id="CTB-uY-Vmp"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="2Ln-QP-XOz" firstAttribute="top" secondItem="372" secondAttribute="top" constant="20" id="37A-Jo-tTW"/>
                     <constraint firstItem="2Ln-QP-XOz" firstAttribute="leading" secondItem="372" secondAttribute="leading" constant="20" id="EZc-Wg-AJZ"/>
+                    <constraint firstItem="m6f-9v-37j" firstAttribute="top" secondItem="372" secondAttribute="top" constant="19" id="HV4-VJ-ml6"/>
                     <constraint firstAttribute="trailing" secondItem="2Ln-QP-XOz" secondAttribute="trailing" constant="20" id="Oag-OQ-T6Z"/>
-                    <constraint firstAttribute="bottom" secondItem="Ef7-oO-jdb" secondAttribute="bottom" constant="40" id="gdE-4v-VVB"/>
-                    <constraint firstAttribute="bottom" secondItem="2Ln-QP-XOz" secondAttribute="bottom" constant="20" id="vnp-GK-gEh"/>
-                    <constraint firstItem="Ef7-oO-jdb" firstAttribute="leading" secondItem="372" secondAttribute="leading" constant="40" id="zQn-Jo-WcN"/>
+                    <constraint firstAttribute="trailing" secondItem="m6f-9v-37j" secondAttribute="trailing" constant="19" id="TQe-AO-Bub"/>
+                    <constraint firstItem="m6f-9v-37j" firstAttribute="leading" secondItem="372" secondAttribute="leading" constant="19" id="fN6-3f-DjI"/>
+                    <constraint firstAttribute="bottom" secondItem="h51-LB-Obd" secondAttribute="bottom" constant="20" id="gLl-mc-rPo"/>
+                    <constraint firstAttribute="bottom" secondItem="Ef7-oO-jdb" secondAttribute="bottom" constant="20" id="gdE-4v-VVB"/>
+                    <constraint firstAttribute="trailing" secondItem="h51-LB-Obd" secondAttribute="trailing" constant="20" id="tCp-Vt-Ddc"/>
+                    <constraint firstAttribute="bottom" secondItem="2Ln-QP-XOz" secondAttribute="bottom" constant="61" id="vnp-GK-gEh"/>
+                    <constraint firstItem="h51-LB-Obd" firstAttribute="top" secondItem="m6f-9v-37j" secondAttribute="bottom" constant="20" id="xyC-ak-YUb"/>
+                    <constraint firstItem="Ef7-oO-jdb" firstAttribute="leading" secondItem="372" secondAttribute="leading" constant="20" id="zQn-Jo-WcN"/>
                 </constraints>
             </view>
             <connections>
@@ -752,6 +769,7 @@
                 <outlet property="arrayController" destination="SOv-x0-e22" id="sb9-7S-WZN"/>
                 <outlet property="browse_view" destination="woV-IG-VgM" id="r8o-O1-RRV"/>
                 <outlet property="button" destination="Ef7-oO-jdb" id="HSb-7P-nqx"/>
+                <outlet property="deleteButton" destination="h51-LB-Obd" id="n7I-Vl-tGn"/>
                 <outlet property="directory_view" destination="Eb9-Fd-MrZ" id="tm8-mr-UoL"/>
                 <outlet property="imagesController" destination="c8f-e8-SkH" id="Efi-ID-Utb"/>
                 <outlet property="scroll_view" destination="2Ln-QP-XOz" id="mvH-q7-6gz"/>
@@ -766,6 +784,7 @@
                         <bool key="NSConditionallySetsEditable" value="NO"/>
                     </dictionary>
                 </binding>
+                <binding destination="494" name="managedObjectContext" keyPath="self.managedObjectContext" id="FpQ-G8-hlR"/>
                 <binding destination="3gj-Rq-bm0" name="selectionIndexes" keyPath="selected" id="WPc-70-aol"/>
             </connections>
         </arrayController>
