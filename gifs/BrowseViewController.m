@@ -53,19 +53,21 @@
 @synthesize inner = _inner;
 @synthesize outer = _outer;
 @synthesize images = _images;
+@synthesize zoom = _zoom;
+@synthesize zoomValue = _zoomValue;
 
 - (id) init {
     self = [super init];
     NSArray* topLevelObjects = [NSArray arrayWithObjects: _imageBrowser, _inner, nil];
     [[NSBundle mainBundle] loadNibNamed:@"BrowseView" owner:self topLevelObjects:&topLevelObjects];
     return self;
+    
 }
 
 - (void) awakeFromNib {
     _images = [[NSMutableArray alloc] init];
     _importedImages = [[NSMutableArray alloc] init];
     [_inner setHidden:YES];
-    
 }
 
 - (IBAction)doubleClick:(NSUInteger) index {
@@ -78,12 +80,21 @@
     NSError* local = nil;
     NSArray* directoryContents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:&local];
     
+    NSRegularExpression* imageChecker = [NSRegularExpression regularExpressionWithPattern:@"^.+\\.(png|jpg|gif|jpeg)$" options:NSRegularExpressionCaseInsensitive error:&local];
+    
     [directoryContents enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         NSString* filename = (NSString*)obj;
         NSMutableString* wholePath = [NSMutableString stringWithFormat:@"%@/%@", path, filename];
-        ImageObject* new = [[ImageObject alloc] init];
-        [new setPath:wholePath];
-        [_importedImages addObject:new];
+        
+        NSUInteger valid = [imageChecker numberOfMatchesInString:filename options:0 range:NSMakeRange(0, [filename length])];
+                                      
+        if (valid > 0) {
+        
+            ImageObject* new = [[ImageObject alloc] init];
+            [new setPath:wholePath];
+            [_importedImages addObject:new];
+            
+        }
         
     }];
     

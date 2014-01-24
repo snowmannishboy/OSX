@@ -17,6 +17,7 @@
 @synthesize inner = _inner;
 @synthesize outer = _outer;
 @synthesize controller = _controller;
+@synthesize currentImage = _currentImage;
 
 - (id) init {
     self = [super init];
@@ -37,7 +38,9 @@
 }
 
 - (void) removeImage {
+    _currentImage = nil;
     [_imageView setImage:nil];
+    
 }
 
 - (void) add:(NSView *)superView {

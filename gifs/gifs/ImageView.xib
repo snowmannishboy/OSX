@@ -7,7 +7,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="ImageViewController">
             <connections>
                 <outlet property="backButton" destination="fmj-lj-DAv" id="Y8F-Iy-1md"/>
-                <outlet property="imageView" destination="tPj-E6-bnj" id="UEs-W6-Iqv"/>
+                <outlet property="imageView" destination="ADg-QU-Bie" id="pyL-8d-b7Q"/>
                 <outlet property="inner" destination="1" id="AUn-VV-HjF"/>
                 <outlet property="view" destination="1" id="1b1-kb-fAJ"/>
             </connections>
@@ -25,11 +25,6 @@
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
-                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tPj-E6-bnj">
-                    <rect key="frame" x="17" y="17" width="499" height="380"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="tAu-R5-0j2"/>
-                </imageView>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="fmj-lj-DAv">
                     <rect key="frame" x="20" y="411" width="48" height="47"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -47,18 +42,23 @@ Gw
                         <action selector="esc:" target="-2" id="Toe-ov-SGe"/>
                     </connections>
                 </button>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ADg-QU-Bie">
+                    <rect key="frame" x="17" y="17" width="499" height="380"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="1ch-HI-HQR"/>
+                </imageView>
             </subviews>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="tPj-E6-bnj" secondAttribute="bottom" constant="20" id="5n2-k2-wbM"/>
-                <constraint firstItem="tPj-E6-bnj" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="Q9K-af-FRf"/>
-                <constraint firstAttribute="trailing" secondItem="tPj-E6-bnj" secondAttribute="trailing" constant="20" id="Rne-qH-9WE"/>
+                <constraint firstAttribute="trailing" secondItem="ADg-QU-Bie" secondAttribute="trailing" constant="20" id="3Qe-kp-H0v"/>
+                <constraint firstItem="ADg-QU-Bie" firstAttribute="top" secondItem="49X-dS-aBh" secondAttribute="bottom" constant="8" id="Vqd-Jb-J0M"/>
                 <constraint firstAttribute="trailing" secondItem="49X-dS-aBh" secondAttribute="trailing" constant="20" id="XaS-Vo-gAk"/>
                 <constraint firstItem="fmj-lj-DAv" firstAttribute="leading" secondItem="49X-dS-aBh" secondAttribute="leading" id="Yn0-Tk-1UM"/>
                 <constraint firstItem="49X-dS-aBh" firstAttribute="top" secondItem="1" secondAttribute="top" constant="75" id="bFT-SC-0wB"/>
+                <constraint firstItem="ADg-QU-Bie" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="ba1-VJ-bsk"/>
                 <constraint firstItem="49X-dS-aBh" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="e8s-is-sGa"/>
+                <constraint firstAttribute="bottom" secondItem="ADg-QU-Bie" secondAttribute="bottom" constant="20" id="lgb-FO-P7U"/>
                 <constraint firstItem="49X-dS-aBh" firstAttribute="top" secondItem="fmj-lj-DAv" secondAttribute="bottom" constant="8" symbolic="YES" id="r72-My-gtV"/>
                 <constraint firstItem="fmj-lj-DAv" firstAttribute="top" secondItem="1" secondAttribute="top" constant="20" symbolic="YES" id="uWJ-cB-e2a"/>
-                <constraint firstItem="tPj-E6-bnj" firstAttribute="top" secondItem="49X-dS-aBh" secondAttribute="bottom" constant="8" id="zLh-dz-XdL"/>
             </constraints>
         </customView>
     </objects>

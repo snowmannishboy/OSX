@@ -30,11 +30,13 @@
     IKImageBrowserView* _imageBrowser;
     
 }
-
+@property float zoomValue;
 @property IBOutlet id browseViewDelegate;
 @property IBOutlet NSView* outer;
 @property IBOutlet NSView* inner;
 @property IBOutlet IKImageBrowserView* imageBrowser;
+@property IBOutlet NSSlider* zoom;
+
 @property NSMutableArray* images;
 
 - (IBAction)backButton:(id)sender;

@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <Quartz/Quartz.h>
 
 @protocol ImageViewProtocol
 - (void) esc: (id) sender;
