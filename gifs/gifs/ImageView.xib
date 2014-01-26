@@ -9,6 +9,7 @@
                 <outlet property="backButton" destination="fmj-lj-DAv" id="Y8F-Iy-1md"/>
                 <outlet property="imageView" destination="ADg-QU-Bie" id="pyL-8d-b7Q"/>
                 <outlet property="inner" destination="1" id="AUn-VV-HjF"/>
+                <outlet property="nav" destination="KQr-kJ-Hbd" id="lHJ-DF-8t1"/>
                 <outlet property="view" destination="1" id="1b1-kb-fAJ"/>
             </connections>
         </customObject>
@@ -47,22 +48,39 @@ Gw
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="1ch-HI-HQR"/>
                 </imageView>
+                <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KQr-kJ-Hbd">
+                    <rect key="frame" x="231" y="422" width="71" height="24"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <segmentedCell key="cell" alignment="left" style="rounded" trackingMode="momentary" id="5qv-dM-wut">
+                        <font key="font" metaFont="system"/>
+                        <segments>
+                            <segment image="NSLeftFacingTriangleTemplate" width="32"/>
+                            <segment image="NSRightFacingTriangleTemplate" width="32" tag="1"/>
+                        </segments>
+                    </segmentedCell>
+                    <connections>
+                        <action selector="changeImage:" target="-2" id="5C4-1l-dsv"/>
+                    </connections>
+                </segmentedControl>
             </subviews>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="ADg-QU-Bie" secondAttribute="trailing" constant="20" id="3Qe-kp-H0v"/>
-                <constraint firstItem="ADg-QU-Bie" firstAttribute="top" secondItem="49X-dS-aBh" secondAttribute="bottom" constant="8" id="Vqd-Jb-J0M"/>
-                <constraint firstAttribute="trailing" secondItem="49X-dS-aBh" secondAttribute="trailing" constant="20" id="XaS-Vo-gAk"/>
-                <constraint firstItem="fmj-lj-DAv" firstAttribute="leading" secondItem="49X-dS-aBh" secondAttribute="leading" id="Yn0-Tk-1UM"/>
-                <constraint firstItem="49X-dS-aBh" firstAttribute="top" secondItem="1" secondAttribute="top" constant="75" id="bFT-SC-0wB"/>
-                <constraint firstItem="ADg-QU-Bie" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="ba1-VJ-bsk"/>
-                <constraint firstItem="49X-dS-aBh" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="e8s-is-sGa"/>
-                <constraint firstAttribute="bottom" secondItem="ADg-QU-Bie" secondAttribute="bottom" constant="20" id="lgb-FO-P7U"/>
-                <constraint firstItem="49X-dS-aBh" firstAttribute="top" secondItem="fmj-lj-DAv" secondAttribute="bottom" constant="8" symbolic="YES" id="r72-My-gtV"/>
+                <constraint firstItem="49X-dS-aBh" firstAttribute="top" secondItem="fmj-lj-DAv" secondAttribute="bottom" constant="8" symbolic="YES" id="0lA-kG-PRT"/>
+                <constraint firstItem="KQr-kJ-Hbd" firstAttribute="centerY" secondItem="fmj-lj-DAv" secondAttribute="centerY" id="21C-eo-Hk2"/>
+                <constraint firstItem="ADg-QU-Bie" firstAttribute="top" secondItem="49X-dS-aBh" secondAttribute="bottom" constant="8" symbolic="YES" id="2xa-DR-52a"/>
+                <constraint firstItem="49X-dS-aBh" firstAttribute="leading" secondItem="fmj-lj-DAv" secondAttribute="leading" id="7My-Bj-Jhm"/>
+                <constraint firstItem="KQr-kJ-Hbd" firstAttribute="centerX" secondItem="1" secondAttribute="centerX" id="IbH-zZ-S3t"/>
+                <constraint firstItem="ADg-QU-Bie" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" symbolic="YES" id="JDK-0x-WgQ"/>
+                <constraint firstItem="ADg-QU-Bie" firstAttribute="trailing" secondItem="49X-dS-aBh" secondAttribute="trailing" id="SM3-HT-Xta"/>
+                <constraint firstAttribute="bottom" secondItem="ADg-QU-Bie" secondAttribute="bottom" constant="20" symbolic="YES" id="YW8-qO-uAZ"/>
+                <constraint firstItem="49X-dS-aBh" firstAttribute="top" secondItem="1" secondAttribute="top" constant="75" id="hRw-0S-SaE"/>
+                <constraint firstItem="ADg-QU-Bie" firstAttribute="leading" secondItem="49X-dS-aBh" secondAttribute="leading" id="qrf-YV-uhn"/>
                 <constraint firstItem="fmj-lj-DAv" firstAttribute="top" secondItem="1" secondAttribute="top" constant="20" symbolic="YES" id="uWJ-cB-e2a"/>
+                <constraint firstItem="KQr-kJ-Hbd" firstAttribute="centerX" secondItem="49X-dS-aBh" secondAttribute="centerX" id="zwO-yV-zde"/>
             </constraints>
         </customView>
     </objects>
     <resources>
         <image name="NSLeftFacingTriangleTemplate" width="9" height="9"/>
+        <image name="NSRightFacingTriangleTemplate" width="9" height="9"/>
     </resources>
 </document>

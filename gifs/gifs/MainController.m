@@ -68,4 +68,16 @@
     
     [_browseViewcontroller addPath:[box directory]];
 }
+
+- (NSString*) nextImage {
+    
+    return [_browseViewcontroller next];
+}
+
+- (NSString*) previousImage {
+    return [_browseViewcontroller previous];
+}
+
+
+
 @end

@@ -11,6 +11,8 @@
 
 @protocol ImageViewProtocol
 - (void) esc: (id) sender;
+- (NSString*) nextImage;
+- (NSString*) previousImage;
 @end
 
 @interface ImageViewController : NSViewController {
@@ -24,8 +26,11 @@
 @property IBOutlet NSView* inner;
 @property IBOutlet NSImageView* imageView;
 @property IBOutlet NSButton* backButton;
+@property IBOutlet NSSegmentedControl* nav;
 
 - (IBAction)esc:(id)sender;
+- (IBAction)changeImage:(id)sender;
+
 
 
 - (void) add: (NSView*) superView;

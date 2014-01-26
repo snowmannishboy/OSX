@@ -53,8 +53,7 @@
 @synthesize inner = _inner;
 @synthesize outer = _outer;
 @synthesize images = _images;
-@synthesize zoom = _zoom;
-@synthesize zoomValue = _zoomValue;
+
 
 - (id) init {
     self = [super init];
@@ -155,6 +154,51 @@
     [indexes enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
        [_images removeObjectAtIndex:idx];
     }];
+}
+
+- (NSString*) next {
+
+    NSIndexSet* indexes = [_imageBrowser selectionIndexes];
+    
+    NSUInteger current = [indexes firstIndex];
+    
+    if (current != NSNotFound) {
+        current = (current + 1) % [_images count];
+        ImageObject* obj = (ImageObject*)[_images objectAtIndex:current];
+        
+        NSIndexSet* newSelection = [[NSIndexSet alloc] initWithIndex:current];
+        
+        [_imageBrowser setSelectionIndexes:newSelection byExtendingSelection:NO];
+        
+        return [obj imageUID];
+    }
+    
+    return nil;
+}
+
+- (NSString*) previous {
+    
+    NSUInteger current = [[_imageBrowser selectionIndexes] firstIndex];
+    
+    if (current != NSNotFound) {
+        ImageObject* obj;
+        if (current == 0) {
+            current = [_images count] - 1;
+            obj = [_images lastObject];
+        }
+        else {
+            current = current - 1;
+            obj = [_images objectAtIndex:current];
+        }
+        
+        NSIndexSet* newSelection = [[NSIndexSet alloc] initWithIndex:current];
+        
+        [_imageBrowser setSelectionIndexes:newSelection byExtendingSelection:NO];
+        
+        if (obj != nil) return [obj imageUID];
+    }
+    
+    return nil;
 }
 
 

@@ -29,13 +29,11 @@
     NSMutableArray* _importedImages;
     IKImageBrowserView* _imageBrowser;
     
-}
-@property float zoomValue;
+}\
 @property IBOutlet id browseViewDelegate;
 @property IBOutlet NSView* outer;
 @property IBOutlet NSView* inner;
 @property IBOutlet IKImageBrowserView* imageBrowser;
-@property IBOutlet NSSlider* zoom;
 
 @property NSMutableArray* images;
 
@@ -50,6 +48,10 @@
 - (void) addPath: (NSString*) path;
 
 - (void) removeAll;
+
+- (NSString*) next;
+
+- (NSString*) previous;
 
 - (void) imageBrowser:(IKImageBrowserView *) aBrowser removeItemsAtIndexes:(NSIndexSet *) indexes; 
 

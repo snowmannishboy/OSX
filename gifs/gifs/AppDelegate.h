@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "MainController.h"
 
+
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
     
 }
@@ -19,9 +20,12 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property IBOutlet MainController* mainController;
+@property IBOutlet DirectoryService* directoryService;
 
 - (IBAction)saveAction:(id)sender;
 
 - (BOOL) applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender;
+
+- (void) keyDown: (id) sender;
 
 @end

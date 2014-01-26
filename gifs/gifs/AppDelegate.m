@@ -15,9 +15,14 @@
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize mainController = _mainController;
 
+- (void) keyDown:(id)sender {
+    NSLog(@"keyDown");
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     [_window setWindowController:_mainController];
+    [_directoryService setContext:_managedObjectContext];
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "org.rnovak.gifs" in the user's Application Support directory.

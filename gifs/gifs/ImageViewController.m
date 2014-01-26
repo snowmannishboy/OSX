@@ -26,6 +26,25 @@
     return self;
 }
 
+- (void) changeImage:(id)sender {
+    
+    NSSegmentedControl* control = (NSSegmentedControl*) sender;
+    
+    NSInteger selected = [control selectedSegment];
+    
+    NSString* newPath;
+    
+    newPath = selected == 1 ? [_controller nextImage] : [_controller previousImage];
+    
+    if (newPath != nil) {
+        _currentImage = nil;
+        _currentImage = [[NSImage alloc] initWithContentsOfFile:newPath];
+        [_imageView setImage:nil];
+        [_imageView setImage:_currentImage];
+    }
+    
+}
+
 - (void) awakeFromNib {
     [_inner setHidden:YES];
 }

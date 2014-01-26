@@ -11,7 +11,6 @@
                 <outlet property="imageBrowser" destination="b82-uU-pqe" id="ula-Je-SIp"/>
                 <outlet property="inner" destination="1" id="udD-g8-g4K"/>
                 <outlet property="view" destination="1" id="fxr-Ol-TtK"/>
-                <outlet property="zoom" destination="Edg-dq-dam" id="eIm-Z3-5tS"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -20,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="556" height="439"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <scrollView horizontalLineScroll="120" horizontalPageScroll="10" verticalLineScroll="120" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFM-R6-WjL">
+                <scrollView horizontalLineScroll="120" horizontalPageScroll="10" verticalLineScroll="120" verticalPageScroll="10" allowsMagnification="YES" maxMagnification="2" minMagnification="0.29999999999999999" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFM-R6-WjL">
                     <rect key="frame" x="20" y="20" width="516" height="335"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <clipView key="contentView" copiesOnScroll="NO" id="MkR-g8-As6">
@@ -33,7 +32,6 @@
                                 <autoresizingMask key="contentResizingMask" heightSizable="YES"/>
                                 <size key="cellSize" width="100" height="100"/>
                                 <connections>
-                                    <binding destination="-2" name="zoomValue" keyPath="self.zoomValue" id="9t1-w2-nWf"/>
                                     <outlet property="_dataSource" destination="-2" id="qHa-mN-Ud4"/>
                                     <outlet property="_delegate" destination="Qj6-KW-0IK" id="wLR-dU-KPe"/>
                                 </connections>
@@ -45,7 +43,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="jTj-jV-2GM">
-                        <rect key="frame" x="500" y="1" width="15" height="333"/>
+                        <rect key="frame" x="499" y="1" width="16" height="333"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
@@ -63,7 +61,7 @@
                         <constraint firstAttribute="height" constant="47" id="K8D-TQ-2J8"/>
                         <constraint firstAttribute="width" constant="48" id="Nb6-cA-vcq"/>
                     </constraints>
-                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSGoLeftTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sPR-R5-Rmv">
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSLeftFacingTriangleTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sPR-R5-Rmv">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -71,25 +69,11 @@
                         <action selector="backButton:" target="-2" id="kBo-zC-LiD"/>
                     </connections>
                 </button>
-                <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Edg-dq-dam">
-                    <rect key="frame" x="103" y="385" width="350" height="20"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="16" id="lyI-j4-aaO"/>
-                        <constraint firstAttribute="width" constant="346" id="pcb-zs-tPE"/>
-                    </constraints>
-                    <sliderCell key="cell" state="on" alignment="left" maxValue="2" tickMarkPosition="above" allowsTickMarkValuesOnly="YES" sliderType="linear" id="OHM-P8-uPo"/>
-                    <connections>
-                        <binding destination="-2" name="value" keyPath="self.zoomValue" id="is2-Jg-2In"/>
-                    </connections>
-                </slider>
             </subviews>
             <constraints>
                 <constraint firstItem="3mM-oY-Yss" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="1jD-pS-i3N"/>
                 <constraint firstItem="LFM-R6-WjL" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="4xr-Dp-097"/>
                 <constraint firstItem="RFP-eO-z0M" firstAttribute="top" secondItem="1" secondAttribute="top" constant="75" id="Cvu-6u-fjc"/>
-                <constraint firstAttribute="centerX" secondItem="Edg-dq-dam" secondAttribute="centerX" id="FhV-bT-9AT"/>
-                <constraint firstItem="Edg-dq-dam" firstAttribute="top" secondItem="1" secondAttribute="top" constant="36" id="MCs-G0-JFI"/>
                 <constraint firstAttribute="bottom" secondItem="LFM-R6-WjL" secondAttribute="bottom" constant="20" id="MlH-EF-Wd0"/>
                 <constraint firstAttribute="trailing" secondItem="LFM-R6-WjL" secondAttribute="trailing" constant="20" id="Ras-k1-dse"/>
                 <constraint firstItem="RFP-eO-z0M" firstAttribute="top" secondItem="3mM-oY-Yss" secondAttribute="bottom" constant="8" id="ksr-AL-YnX"/>
@@ -106,6 +90,6 @@
         </customObject>
     </objects>
     <resources>
-        <image name="NSGoLeftTemplate" width="9" height="9"/>
+        <image name="NSLeftFacingTriangleTemplate" width="9" height="9"/>
     </resources>
 </document>

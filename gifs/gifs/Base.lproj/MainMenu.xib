@@ -658,6 +658,7 @@
         </window>
         <customObject id="494" customClass="AppDelegate">
             <connections>
+                <outlet property="directoryService" destination="4K6-tW-hxt" id="rTs-7Y-cLy"/>
                 <outlet property="mainController" destination="vdn-LC-sys" id="cIt-si-020"/>
                 <outlet property="window" destination="371" id="532"/>
             </connections>
@@ -666,9 +667,11 @@
         <customObject id="vdn-LC-sys" customClass="MainController">
             <connections>
                 <outlet property="contentView" destination="372" id="kjE-ls-x6G"/>
+                <outlet property="directoryService" destination="4K6-tW-hxt" id="8B2-Xn-Gri"/>
                 <outlet property="mainWindow" destination="371" id="VeN-RH-0DY"/>
                 <outlet property="window" destination="371" id="gtm-q3-0eN"/>
             </connections>
         </customObject>
+        <customObject id="4K6-tW-hxt" customClass="DirectoryService"/>
     </objects>
 </document>
