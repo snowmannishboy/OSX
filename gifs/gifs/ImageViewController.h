@@ -32,8 +32,6 @@
 - (IBAction)esc:(id)sender;
 - (IBAction)changeImage:(id)sender;
 
-
-
 - (void) add: (NSView*) superView;
 - (void) setImage: (NSString*) path;
 - (void) removeImage;

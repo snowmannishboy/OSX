@@ -11,12 +11,15 @@
 @protocol ScrollableImageDelegate <NSObject>
 - (NSString*) nextImage;
 - (NSString*) previousImage;
+- (IBAction)esc:(id)sender;
 @end
 
 @interface ScrollableImage : NSImageView
 
 - (void) scrollLineUp:(id)sender;
 - (void) scrollLineDown:(id)sender;
+
+- (void) mouseDown:(NSEvent *)theEvent;
 
 - (void) scrollWheel:(NSEvent *)theEvent;
 

@@ -28,6 +28,11 @@ static id<ScrollableImageDelegate> _controller;
     // Drawing code here.
 }
 
+- (void) mouseDown:(NSEvent *)theEvent {
+    if (theEvent.clickCount >1l)
+        [_controller esc:self];
+}
+
 - (void) scrollLineDown:(id)sender {
     [_controller nextImage];
 }
@@ -41,11 +46,12 @@ static id<ScrollableImageDelegate> _controller;
 }
 
 - (void) scrollWheel:(NSEvent *)theEvent {
+    
     if (theEvent.deltaY > 0.0) {
-        [_controller nextImage];
+        [_controller previousImage];
     }
     else {
-        [_controller previousImage];
+        [_controller nextImage];
     }
 
 }

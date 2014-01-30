@@ -75,6 +75,11 @@
     
 }
 
+- (void) mouseDown:(NSEvent *)theEvent {
+    if (theEvent.clickCount > 1l)
+        [_controller esc:self];
+}
+
 - (void) add:(NSView *)superView {
     
     _outer = superView;
