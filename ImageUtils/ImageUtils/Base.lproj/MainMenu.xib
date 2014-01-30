@@ -6,17 +6,17 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
             <connections>
-                <outlet property="delegate" destination="494" id="XOe-TK-6ik"/>
+                <outlet property="delegate" destination="494" id="495"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application"/>
         <menu title="AMainMenu" systemMenu="main" id="29">
             <items>
-                <menuItem title="gifs" id="56">
-                    <menu key="submenu" title="gifs" systemMenu="apple" id="57">
+                <menuItem title="ImageUtils" id="56">
+                    <menu key="submenu" title="ImageUtils" systemMenu="apple" id="57">
                         <items>
-                            <menuItem title="About gifs" id="58">
+                            <menuItem title="About ImageUtils" id="58">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
@@ -35,7 +35,7 @@
                             <menuItem isSeparatorItem="YES" id="144">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Hide gifs" keyEquivalent="h" id="134">
+                            <menuItem title="Hide ImageUtils" keyEquivalent="h" id="134">
                                 <connections>
                                     <action selector="hide:" target="-1" id="367"/>
                                 </connections>
@@ -54,7 +54,7 @@
                             <menuItem isSeparatorItem="YES" id="149">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Quit gifs" keyEquivalent="q" id="136">
+                            <menuItem title="Quit ImageUtils" keyEquivalent="q" id="136">
                                 <connections>
                                     <action selector="terminate:" target="-3" id="449"/>
                                 </connections>
@@ -636,7 +636,7 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Help" systemMenu="help" id="491">
                         <items>
-                            <menuItem title="gifs Help" keyEquivalent="?" id="492">
+                            <menuItem title="ImageUtils Help" keyEquivalent="?" id="492">
                                 <connections>
                                     <action selector="showHelp:" target="-1" id="493"/>
                                 </connections>
@@ -646,36 +646,40 @@
                 </menuItem>
             </items>
         </menu>
-        <window title="gifs" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
+        <window title="ImageUtils" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="558" height="457"/>
+            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="372">
-                <rect key="frame" x="0.0" y="0.0" width="558" height="457"/>
+                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
             </view>
+            <toolbar key="toolbar" implicitIdentifier="2C065B1A-184C-49F5-9C81-F5D4F2079A40" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="MXK-q4-ARi">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="0C73B986-ECCD-4ABB-A7EA-460AB7A99C59" explicitItemIdentifier="toolbar_add" label="Add Directory" paletteLabel="Add Directory" tag="-1" image="NSAddTemplate" id="5NZ-MO-d6O"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="4BT-pd-Tdb"/>
+                    <toolbarItem implicitItemIdentifier="8AC56040-3288-4C6D-9B2E-FBF1D0874291" label="Delete Directory" paletteLabel="Delete Directory" tag="-1" image="NSTrashEmpty" id="NDD-2c-2AO"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" explicitItemIdentifier="toolbar_space" id="FkN-TZ-0xc"/>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="5NZ-MO-d6O"/>
+                    <toolbarItem reference="4BT-pd-Tdb"/>
+                    <toolbarItem reference="NDD-2c-2AO"/>
+                </defaultToolbarItems>
+            </toolbar>
         </window>
         <customObject id="494" customClass="AppDelegate">
             <connections>
-                <outlet property="directoryService" destination="4K6-tW-hxt" id="rTs-7Y-cLy"/>
-                <outlet property="mainController" destination="vdn-LC-sys" id="cIt-si-020"/>
+                <outlet property="mainController" destination="XHx-CY-0My" id="4S3-AW-V0a"/>
                 <outlet property="window" destination="371" id="532"/>
             </connections>
         </customObject>
         <customObject id="420" customClass="NSFontManager"/>
-        <customObject id="vdn-LC-sys" customClass="MainController">
-            <connections>
-                <outlet property="contentView" destination="372" id="kjE-ls-x6G"/>
-                <outlet property="directoryService" destination="4K6-tW-hxt" id="8B2-Xn-Gri"/>
-                <outlet property="mainWindow" destination="371" id="VeN-RH-0DY"/>
-                <outlet property="window" destination="371" id="gtm-q3-0eN"/>
-            </connections>
-        </customObject>
-        <customObject id="4K6-tW-hxt" customClass="DirectoryService">
-            <connections>
-                <outlet property="delegate" destination="494" id="9Yo-54-W38"/>
-            </connections>
-        </customObject>
+        <customObject id="XHx-CY-0My" customClass="MainWindowController"/>
     </objects>
+    <resources>
+        <image name="NSAddTemplate" width="8" height="8"/>
+        <image name="NSTrashEmpty" width="32" height="32"/>
+    </resources>
 </document>

@@ -43,7 +43,7 @@ Gw
                         <action selector="esc:" target="-2" id="Toe-ov-SGe"/>
                     </connections>
                 </button>
-                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ADg-QU-Bie">
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ADg-QU-Bie" customClass="ScrollableImage">
                     <rect key="frame" x="17" y="17" width="499" height="380"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="1ch-HI-HQR"/>

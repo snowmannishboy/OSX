@@ -8,11 +8,25 @@
 
 #import "DirectoryService.h"
 
+static NSManagedObjectContext* _context;
+
 @implementation DirectoryService
 
-@synthesize context = _context;
+@synthesize delegate = _delegate;
+
++ (void) setContext:(NSManagedObjectContext *)context {
+    _context = context;
+}
 
 - (NSMutableArray*) load {
+    
+    if (_context == nil) {
+        _context = [_delegate managedObjectContext];
+        if (_context == nil) {
+            NSLog(@"Still Nill");
+            return nil;
+        }
+    }
     
     NSMutableArray* result = nil;
     NSError* local = nil;
@@ -55,7 +69,7 @@
     NSFetchRequest* request = [[NSFetchRequest alloc] init];
     NSEntityDescription* sth = [NSEntityDescription entityForName:@"Directory" inManagedObjectContext:_context];
     
-    NSPredicate* query = [NSPredicate predicateWithFormat:@"path = ?", directory];
+    NSPredicate* query = [NSPredicate predicateWithFormat:@"path = %@", directory];
     
     [request setEntity:sth];
     [request setPredicate:query];
@@ -65,12 +79,15 @@
     if (data != nil) {
         [data enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             [_context deleteObject:obj];
+            *stop = YES;
         }];
     }
     
     if (![_context save:&local]) {
         NSLog(@"There was an error deleting your shit, %@", [local localizedDescription]);
     }
+    
+    
     
 }
 

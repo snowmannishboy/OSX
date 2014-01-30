@@ -19,14 +19,14 @@
             <rect key="frame" x="0.0" y="0.0" width="556" height="439"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <scrollView horizontalLineScroll="120" horizontalPageScroll="10" verticalLineScroll="120" verticalPageScroll="10" allowsMagnification="YES" maxMagnification="2" minMagnification="0.29999999999999999" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFM-R6-WjL">
+                <scrollView borderType="line" horizontalLineScroll="120" horizontalPageScroll="10" verticalLineScroll="120" verticalPageScroll="10" allowsMagnification="YES" maxMagnification="2" minMagnification="0.29999999999999999" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFM-R6-WjL">
                     <rect key="frame" x="20" y="20" width="516" height="335"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <clipView key="contentView" copiesOnScroll="NO" id="MkR-g8-As6">
                         <rect key="frame" x="1" y="1" width="514" height="333"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <ikImageBrowserView autoresizesSubviews="NO" fixedFrame="YES" zoomValue="0.45626574754714966" allowsMultipleSelection="NO" animates="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b82-uU-pqe">
+                            <ikImageBrowserView fixedFrame="YES" zoomValue="0.45626574754714966" allowsMultipleSelection="NO" animates="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b82-uU-pqe">
                                 <rect key="frame" x="0.0" y="0.0" width="514" height="333"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <autoresizingMask key="contentResizingMask" heightSizable="YES"/>
@@ -43,7 +43,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="jTj-jV-2GM">
-                        <rect key="frame" x="499" y="1" width="16" height="333"/>
+                        <rect key="frame" x="500" y="1" width="15" height="333"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
@@ -61,7 +61,7 @@
                         <constraint firstAttribute="height" constant="47" id="K8D-TQ-2J8"/>
                         <constraint firstAttribute="width" constant="48" id="Nb6-cA-vcq"/>
                     </constraints>
-                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSLeftFacingTriangleTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sPR-R5-Rmv">
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSGoLeftTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sPR-R5-Rmv">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -90,6 +90,6 @@
         </customObject>
     </objects>
     <resources>
-        <image name="NSLeftFacingTriangleTemplate" width="9" height="9"/>
+        <image name="NSGoLeftTemplate" width="9" height="9"/>
     </resources>
 </document>

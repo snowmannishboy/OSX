@@ -41,8 +41,14 @@
 }
 
 - (void) awakeFromNib {
-    //NSRect frame = [[NSScreen mainScreen] frame];
-    //[_mainWindow setFrame: frame display:YES animate:YES];
+    NSRect frame = [[NSScreen mainScreen] frame];
+    frame.size.height /= 1.5;
+    frame.size.width /= 2;
+    
+    NSMutableArray* existing = [_directoryService load];
+
+    [_mainWindow setFrame: frame display:YES animate:YES];
+    [_mainWindow center];
     
     _directoryViewController = [[DirectoryViewController alloc] init];
     _browseViewcontroller = [[BrowseViewController alloc] init];
@@ -51,6 +57,7 @@
     [_browseViewcontroller add:_contentView];
     [_browseViewcontroller setController:self];
     
+    [_directoryViewController setDirectoryService:_directoryService];
     [_directoryViewController add: _contentView];
     
     [_imageViewController setController:self];
@@ -58,15 +65,20 @@
     
     [ClickableBox setController:self];
     
+    [existing enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [_directoryViewController addObject:obj];
+    }];
+    
 }
 
 - (void) performClick:(id)sender {
+    
     ClickableBox* box = (ClickableBox*)sender;
+    
+    [_browseViewcontroller addPath:[box directory]];
     
     [[_directoryViewController inner] setHidden:YES];
     [[_browseViewcontroller inner] setHidden:NO];
-    
-    [_browseViewcontroller addPath:[box directory]];
 }
 
 - (NSString*) nextImage {

@@ -10,7 +10,7 @@
 #import "DirectoryViewController.h"
 #import "BrowseViewController.h"
 #import "ImageViewController.h"
-#import "DirectoryService.h"
+
 
 #define ADD_BUTTON_INDEX 0
 #define TRASH_BUTTON_INDEX 2

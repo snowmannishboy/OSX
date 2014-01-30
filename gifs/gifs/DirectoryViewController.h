@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "DirectoryService.h"
 
 @interface DirectoryViewController : NSViewController {
 
@@ -18,6 +19,10 @@
 
 - (void) add: (NSView*) superView;
 
+- (IBAction)deleteButtonClicked:(id)sender;
+
+- (void) addObject:(id) obj;
+
 @property IBOutlet NSView* outter;
 @property IBOutlet NSView* inner;
 @property IBOutlet NSCollectionView* directoryView;
@@ -26,5 +31,6 @@
 
 @property id directories;
 @property id selected;
+@property DirectoryService* directoryService;
 
 @end

@@ -76,10 +76,13 @@
                         <constraint firstAttribute="height" constant="48" id="Egd-fL-Ntr"/>
                         <constraint firstAttribute="width" constant="48" id="Ihc-eq-z1X"/>
                     </constraints>
-                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSTrashEmpty" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="snP-at-ZnC">
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSTrashEmpty" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="snP-at-ZnC">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="deleteButtonClicked:" target="-2" id="cdQ-MQ-0Sq"/>
+                    </connections>
                 </button>
             </subviews>
             <constraints>

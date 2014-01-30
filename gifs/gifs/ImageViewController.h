@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
+#import "ScrollableImage.h"
 
 @protocol ImageViewProtocol
 - (void) esc: (id) sender;
@@ -15,7 +16,7 @@
 - (NSString*) previousImage;
 @end
 
-@interface ImageViewController : NSViewController {
+@interface ImageViewController : NSViewController<ScrollableImageDelegate> {
 
 }
 
@@ -36,6 +37,9 @@
 - (void) add: (NSView*) superView;
 - (void) setImage: (NSString*) path;
 - (void) removeImage;
+
+- (void) nextImage;
+- (void) previousImage;
 
 
 @end

@@ -14,6 +14,7 @@
 		16C1C43018923A7800CB7034 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C1C42F18923A7800CB7034 /* Image.m */; };
 		16C1C43318923A7800CB7034 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C1C43218923A7800CB7034 /* Tag.m */; };
 		16C2C55F1895009C009FD840 /* DirectoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C2C55E1895009C009FD840 /* DirectoryService.m */; };
+		16D2E8F4189A1031000DFFB2 /* ScrollableImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D2E8F3189A1031000DFFB2 /* ScrollableImage.m */; };
 		16DFC1CF188F8FEC0033AE3E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16DFC1CE188F8FEC0033AE3E /* Cocoa.framework */; };
 		16DFC1D9188F8FEC0033AE3E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16DFC1D7188F8FEC0033AE3E /* InfoPlist.strings */; };
 		16DFC1DB188F8FEC0033AE3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DFC1DA188F8FEC0033AE3E /* main.m */; };
@@ -63,6 +64,8 @@
 		16C1C43218923A7800CB7034 /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
 		16C2C55D1895009C009FD840 /* DirectoryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryService.h; sourceTree = "<group>"; };
 		16C2C55E1895009C009FD840 /* DirectoryService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectoryService.m; sourceTree = "<group>"; };
+		16D2E8F2189A1031000DFFB2 /* ScrollableImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollableImage.h; sourceTree = "<group>"; };
+		16D2E8F3189A1031000DFFB2 /* ScrollableImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollableImage.m; sourceTree = "<group>"; };
 		16DFC1CB188F8FEC0033AE3E /* gifs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gifs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16DFC1CE188F8FEC0033AE3E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		16DFC1D1188F8FEC0033AE3E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -129,6 +132,8 @@
 				16B7BE0F18921793005B5E57 /* ImageView.xib */,
 				16B7BE11189217B5005B5E57 /* ImageViewController.h */,
 				16B7BE12189217B5005B5E57 /* ImageViewController.m */,
+				16D2E8F2189A1031000DFFB2 /* ScrollableImage.h */,
+				16D2E8F3189A1031000DFFB2 /* ScrollableImage.m */,
 			);
 			name = "Image View";
 			sourceTree = "<group>";
@@ -401,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16B7BE13189217B5005B5E57 /* ImageViewController.m in Sources */,
+				16D2E8F4189A1031000DFFB2 /* ScrollableImage.m in Sources */,
 				16DFC208188F902B0033AE3E /* MainController.m in Sources */,
 				16C1C42D18923A7700CB7034 /* Directory.m in Sources */,
 				16DFC21B1890C0060033AE3E /* DirectoryViewController.m in Sources */,

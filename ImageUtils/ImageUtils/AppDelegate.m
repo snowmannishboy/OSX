@@ -1,8 +1,8 @@
 //
 //  AppDelegate.m
-//  gifs
+//  ImageUtils
 //
-//  Created by Robert Novak on 1/21/14.
+//  Created by Robert Novak on 1/26/14.
 //  Copyright (c) 2014 Robert Novak. All rights reserved.
 //
 
@@ -13,24 +13,18 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize managedObjectContext = _managedObjectContext;
-@synthesize mainController = _mainController;
-
-- (void) keyDown:(id)sender {
-    NSLog(@"keyDown");
-}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    [DirectoryService setContext:_managedObjectContext];
     [_window setWindowController:_mainController];
 }
 
-// Returns the directory the application uses to store the Core Data store file. This code uses a directory named "org.rnovak.gifs" in the user's Application Support directory.
+// Returns the directory the application uses to store the Core Data store file. This code uses a directory named "org.rnovak.ImageUtils" in the user's Application Support directory.
 - (NSURL *)applicationFilesDirectory
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSURL *appSupportURL = [[fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject];
-    return [appSupportURL URLByAppendingPathComponent:@"org.rnovak.gifs"];
+    return [appSupportURL URLByAppendingPathComponent:@"org.rnovak.ImageUtils"];
 }
 
 // Creates if necessary and returns the managed object model for the application.
@@ -40,7 +34,7 @@
         return _managedObjectModel;
     }
 	
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"gifs" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"ImageUtils" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
@@ -87,7 +81,7 @@
         }
     }
     
-    NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"gifs.storedata"];
+    NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"ImageUtils.storedata"];
     NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
     if (![coordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error]) {
         [[NSApplication sharedApplication] presentError:error];

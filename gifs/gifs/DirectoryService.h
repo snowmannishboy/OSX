@@ -9,6 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "Directory.h"
 
+@protocol DirectoryServiceDelegateProtocol <NSObject>
+
+-(NSManagedObjectContext*) managedObjectContext;
+
+@end
+
 @interface DirectoryService : NSObject
 
 - (NSMutableArray*) load;
@@ -17,7 +23,8 @@
 
 - (void) remove: (NSString*) directory;
 
-@property NSManagedObjectContext* context;
+@property IBOutlet id<DirectoryServiceDelegateProtocol> delegate;
 
++ (void) setContext: (NSManagedObjectContext*) context;
 
 @end

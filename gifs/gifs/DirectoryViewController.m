@@ -20,6 +20,7 @@
 @synthesize directoryController = _directoryController;
 @synthesize inner = _inner;
 @synthesize outter = _outter;
+@synthesize directoryService = _directoryService;
 
 - (id) init {
     self = [super init];
@@ -32,9 +33,7 @@
 }
 
 - (void) awakeFromNib {
-    NSLog(@"In Here");
-    
-    
+        
     _directories = [[NSMutableArray alloc] init];
     _selected = [[NSMutableArray alloc] init];
     
@@ -65,7 +64,39 @@
 
 }
 
+- (void) addObject: (id) obj {
+    [_directoryController addObject:obj];
+}
+
+- (void) processUrls: (NSArray*) data {
+    if (data == nil) return;
+    
+    [data enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSURL* url = (NSURL*) obj;
+        NSString* path = [url path];
+        [_directoryService add:path];
+        NSDictionary* thisObj = [NSDictionary dictionaryWithObjectsAndKeys:path, @"filename", nil];
+        [self performSelectorOnMainThread:@selector(addObject:) withObject:thisObj waitUntilDone:YES];
+    }];
+    
+}
+
+- (IBAction)deleteButtonClicked:(id)sender {
+    NSArray* selected = [_directoryController selectedObjects];
+    if ([selected count] > 0) {
+        [selected enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            NSString* filename = [obj valueForKey:@"filename"];
+            if (_directoryService != nil) {
+                [_directoryService remove:filename];
+            }
+            [_directoryController remove:obj];
+        }];
+    }
+}
+
 - (IBAction)addButtonClicked:(id)sender {
+    
+    
     NSOpenPanel* panel = [NSOpenPanel openPanel];
     
     [panel setCanChooseDirectories:YES];
@@ -74,19 +105,18 @@
     
     long result = [panel runModal];
     
+    
     if (result == NSOKButton) {
-        NSArray* paths = [panel URLs];
         
-        [paths enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            NSURL* urlPath = (NSURL*) obj;
-            NSString* path = [urlPath path];
-            NSDictionary* newObj = [NSDictionary dictionaryWithObjectsAndKeys:path, @"filename", nil];
-            [_directoryController addObject:newObj];
-        }];
+        [NSThread detachNewThreadSelector:@selector(processUrls:) toTarget:self withObject:[panel URLs]];
         
     }
     
 }
+
+
+
+
 
 
 

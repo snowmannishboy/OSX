@@ -26,6 +26,18 @@
     return self;
 }
 
+- (void) previousImage {
+    NSString* next = [_controller previousImage];
+    if (next != nil) {
+        [self setImage:next];
+    }
+}
+
+- (void) nextImage {
+    NSString* next = [_controller nextImage];
+    if (next != nil) { [self setImage: next]; }
+}
+
 - (void) changeImage:(id)sender {
     
     NSSegmentedControl* control = (NSSegmentedControl*) sender;
@@ -47,6 +59,7 @@
 
 - (void) awakeFromNib {
     [_inner setHidden:YES];
+    [ScrollableImage setController:self];
 }
 
 - (void) setImage:(NSString*) path {
