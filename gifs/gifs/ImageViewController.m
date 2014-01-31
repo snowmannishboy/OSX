@@ -103,4 +103,10 @@
     [_controller esc:sender];
 }
 
+
+- (void) changeZoom:(id)sender {
+
+}
+
+
 @end

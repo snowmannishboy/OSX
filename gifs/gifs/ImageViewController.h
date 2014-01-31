@@ -29,8 +29,11 @@
 @property IBOutlet NSButton* backButton;
 @property IBOutlet NSSegmentedControl* nav;
 
+@property IBOutlet NSSegmentedControl* zoom;
+
 - (IBAction)esc:(id)sender;
 - (IBAction)changeImage:(id)sender;
+- (IBAction)changeZoom: (id) sender;
 
 - (void) add: (NSView*) superView;
 - (void) setImage: (NSString*) path;
