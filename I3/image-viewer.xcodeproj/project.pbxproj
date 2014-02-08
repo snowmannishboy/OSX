@@ -1,0 +1,668 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1645E0D618A335E7009C0749 /* BrowseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1645E0D518A335E7009C0749 /* BrowseView.xib */; };
+		1645E0D918A33609009C0749 /* BrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1645E0D818A33609009C0749 /* BrowseViewController.m */; };
+		1645E0DB18A337B3009C0749 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1645E0DA18A337B3009C0749 /* Quartz.framework */; };
+		16472EEA18A3527600482889 /* ImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16472EE918A3527600482889 /* ImageView.xib */; };
+		16472EED18A3528400482889 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16472EEC18A3528400482889 /* ImageViewController.m */; };
+		16472EF618A48C0F00482889 /* TagView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16472EF518A48C0F00482889 /* TagView.xib */; };
+		16472EF918A48C2000482889 /* TagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16472EF818A48C2000482889 /* TagViewController.m */; };
+		16472EFC18A48EF100482889 /* TagItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16472EFB18A48EF100482889 /* TagItemView.xib */; };
+		16472EFF18A48F0F00482889 /* TagItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16472EFE18A48F0F00482889 /* TagItemViewController.m */; };
+		167B8644189E1B18007D9C57 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 167B8643189E1B18007D9C57 /* Cocoa.framework */; };
+		167B864E189E1B18007D9C57 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 167B864C189E1B18007D9C57 /* InfoPlist.strings */; };
+		167B8650189E1B18007D9C57 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 167B864F189E1B18007D9C57 /* main.m */; };
+		167B8654189E1B18007D9C57 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 167B8652189E1B18007D9C57 /* Credits.rtf */; };
+		167B8657189E1B18007D9C57 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 167B8656189E1B18007D9C57 /* AppDelegate.m */; };
+		167B865A189E1B18007D9C57 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 167B8658189E1B18007D9C57 /* MainMenu.xib */; };
+		167B865D189E1B18007D9C57 /* image_viewer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 167B865B189E1B18007D9C57 /* image_viewer.xcdatamodeld */; };
+		167B865F189E1B18007D9C57 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 167B865E189E1B18007D9C57 /* Images.xcassets */; };
+		167B8666189E1B19007D9C57 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 167B8665189E1B19007D9C57 /* XCTest.framework */; };
+		167B8667189E1B19007D9C57 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 167B8643189E1B18007D9C57 /* Cocoa.framework */; };
+		167B866F189E1B19007D9C57 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 167B866D189E1B19007D9C57 /* InfoPlist.strings */; };
+		167B8671189E1B19007D9C57 /* image_viewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 167B8670189E1B19007D9C57 /* image_viewerTests.m */; };
+		167B8680189E1E15007D9C57 /* DirectoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 167B867F189E1E15007D9C57 /* DirectoryView.xib */; };
+		167B8683189E1E3E007D9C57 /* DirectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 167B8682189E1E3E007D9C57 /* DirectoryViewController.m */; };
+		167DF57D18A0B6B600184458 /* NSViewController+MaximizedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 167DF57C18A0B6B600184458 /* NSViewController+MaximizedView.m */; };
+		167DF58018A0BF1200184458 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 167DF57F18A0BF1200184458 /* MainController.m */; };
+		167DF58418A0C35300184458 /* DirectoryItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 167DF58318A0C35300184458 /* DirectoryItemView.xib */; };
+		167DF58718A0C38100184458 /* DirectoryItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 167DF58618A0C38100184458 /* DirectoryItemViewController.m */; };
+		167DF58A18A0C3AC00184458 /* ClickableBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 167DF58918A0C3AC00184458 /* ClickableBox.m */; };
+		167DF58D18A2162E00184458 /* ColoredView.m in Sources */ = {isa = PBXBuildFile; fileRef = 167DF58C18A2162E00184458 /* ColoredView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		167B8668189E1B19007D9C57 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 167B8638189E1B18007D9C57 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 167B863F189E1B18007D9C57;
+			remoteInfo = "image-viewer";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1645E0D518A335E7009C0749 /* BrowseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrowseView.xib; sourceTree = "<group>"; };
+		1645E0D718A33609009C0749 /* BrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseViewController.h; sourceTree = "<group>"; };
+		1645E0D818A33609009C0749 /* BrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseViewController.m; sourceTree = "<group>"; };
+		1645E0DA18A337B3009C0749 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		16472EE918A3527600482889 /* ImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageView.xib; sourceTree = "<group>"; };
+		16472EEB18A3528400482889 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		16472EEC18A3528400482889 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		16472EF518A48C0F00482889 /* TagView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagView.xib; sourceTree = "<group>"; };
+		16472EF718A48C2000482889 /* TagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagViewController.h; sourceTree = "<group>"; };
+		16472EF818A48C2000482889 /* TagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagViewController.m; sourceTree = "<group>"; };
+		16472EFB18A48EF100482889 /* TagItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagItemView.xib; sourceTree = "<group>"; };
+		16472EFD18A48F0F00482889 /* TagItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagItemViewController.h; sourceTree = "<group>"; };
+		16472EFE18A48F0F00482889 /* TagItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagItemViewController.m; sourceTree = "<group>"; };
+		16472F0018A4B69200482889 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		167B8640189E1B18007D9C57 /* image-viewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "image-viewer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		167B8643189E1B18007D9C57 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		167B8646189E1B18007D9C57 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		167B8647189E1B18007D9C57 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		167B8648189E1B18007D9C57 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		167B864B189E1B18007D9C57 /* image-viewer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "image-viewer-Info.plist"; sourceTree = "<group>"; };
+		167B864D189E1B18007D9C57 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		167B864F189E1B18007D9C57 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		167B8651189E1B18007D9C57 /* image-viewer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "image-viewer-Prefix.pch"; sourceTree = "<group>"; };
+		167B8653189E1B18007D9C57 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		167B8655189E1B18007D9C57 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		167B8656189E1B18007D9C57 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		167B8659189E1B18007D9C57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		167B865C189E1B18007D9C57 /* image_viewer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = image_viewer.xcdatamodel; sourceTree = "<group>"; };
+		167B865E189E1B18007D9C57 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		167B8664189E1B19007D9C57 /* image-viewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "image-viewerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		167B8665189E1B19007D9C57 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		167B866C189E1B19007D9C57 /* image-viewerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "image-viewerTests-Info.plist"; sourceTree = "<group>"; };
+		167B866E189E1B19007D9C57 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		167B8670189E1B19007D9C57 /* image_viewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = image_viewerTests.m; sourceTree = "<group>"; };
+		167B867F189E1E15007D9C57 /* DirectoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DirectoryView.xib; sourceTree = "<group>"; };
+		167B8681189E1E3E007D9C57 /* DirectoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryViewController.h; sourceTree = "<group>"; };
+		167B8682189E1E3E007D9C57 /* DirectoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectoryViewController.m; sourceTree = "<group>"; };
+		167DF57B18A0B6B600184458 /* NSViewController+MaximizedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSViewController+MaximizedView.h"; sourceTree = "<group>"; };
+		167DF57C18A0B6B600184458 /* NSViewController+MaximizedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSViewController+MaximizedView.m"; sourceTree = "<group>"; };
+		167DF57E18A0BF1200184458 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
+		167DF57F18A0BF1200184458 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
+		167DF58318A0C35300184458 /* DirectoryItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DirectoryItemView.xib; sourceTree = "<group>"; };
+		167DF58518A0C38100184458 /* DirectoryItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryItemViewController.h; sourceTree = "<group>"; };
+		167DF58618A0C38100184458 /* DirectoryItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectoryItemViewController.m; sourceTree = "<group>"; };
+		167DF58818A0C3AC00184458 /* ClickableBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClickableBox.h; sourceTree = "<group>"; };
+		167DF58918A0C3AC00184458 /* ClickableBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClickableBox.m; sourceTree = "<group>"; };
+		167DF58B18A2162E00184458 /* ColoredView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColoredView.h; sourceTree = "<group>"; };
+		167DF58C18A2162E00184458 /* ColoredView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColoredView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		167B863D189E1B18007D9C57 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1645E0DB18A337B3009C0749 /* Quartz.framework in Frameworks */,
+				167B8644189E1B18007D9C57 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		167B8661189E1B19007D9C57 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				167B8667189E1B19007D9C57 /* Cocoa.framework in Frameworks */,
+				167B8666189E1B19007D9C57 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1645E0D318A33518009C0749 /* MainWindow */ = {
+			isa = PBXGroup;
+			children = (
+				167DF57E18A0BF1200184458 /* MainController.h */,
+				167DF57F18A0BF1200184458 /* MainController.m */,
+				167B8655189E1B18007D9C57 /* AppDelegate.h */,
+				167B8656189E1B18007D9C57 /* AppDelegate.m */,
+				167B8658189E1B18007D9C57 /* MainMenu.xib */,
+				167DF58B18A2162E00184458 /* ColoredView.h */,
+				167DF58C18A2162E00184458 /* ColoredView.m */,
+			);
+			name = MainWindow;
+			sourceTree = "<group>";
+		};
+		1645E0D418A3353E009C0749 /* BrowseView */ = {
+			isa = PBXGroup;
+			children = (
+				1645E0D518A335E7009C0749 /* BrowseView.xib */,
+				1645E0D718A33609009C0749 /* BrowseViewController.h */,
+				1645E0D818A33609009C0749 /* BrowseViewController.m */,
+			);
+			name = BrowseView;
+			sourceTree = "<group>";
+		};
+		16472EE818A3526800482889 /* ImageView */ = {
+			isa = PBXGroup;
+			children = (
+				16472EE918A3527600482889 /* ImageView.xib */,
+				16472EEB18A3528400482889 /* ImageViewController.h */,
+				16472EEC18A3528400482889 /* ImageViewController.m */,
+			);
+			name = ImageView;
+			sourceTree = "<group>";
+		};
+		16472EF418A48BFA00482889 /* TagView */ = {
+			isa = PBXGroup;
+			children = (
+				16472EFA18A48ED900482889 /* TagItemView */,
+				16472EF518A48C0F00482889 /* TagView.xib */,
+				16472EF718A48C2000482889 /* TagViewController.h */,
+				16472EF818A48C2000482889 /* TagViewController.m */,
+			);
+			name = TagView;
+			sourceTree = "<group>";
+		};
+		16472EFA18A48ED900482889 /* TagItemView */ = {
+			isa = PBXGroup;
+			children = (
+				16472EFB18A48EF100482889 /* TagItemView.xib */,
+				16472EFD18A48F0F00482889 /* TagItemViewController.h */,
+				16472EFE18A48F0F00482889 /* TagItemViewController.m */,
+			);
+			name = TagItemView;
+			sourceTree = "<group>";
+		};
+		167B8637189E1B18007D9C57 = {
+			isa = PBXGroup;
+			children = (
+				167B8649189E1B18007D9C57 /* image-viewer */,
+				167B866A189E1B19007D9C57 /* image-viewerTests */,
+				167B8642189E1B18007D9C57 /* Frameworks */,
+				167B8641189E1B18007D9C57 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		167B8641189E1B18007D9C57 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				167B8640189E1B18007D9C57 /* image-viewer.app */,
+				167B8664189E1B19007D9C57 /* image-viewerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		167B8642189E1B18007D9C57 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16472F0018A4B69200482889 /* CoreServices.framework */,
+				1645E0DA18A337B3009C0749 /* Quartz.framework */,
+				167B8643189E1B18007D9C57 /* Cocoa.framework */,
+				167B8665189E1B19007D9C57 /* XCTest.framework */,
+				167B8645189E1B18007D9C57 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		167B8645189E1B18007D9C57 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				167B8646189E1B18007D9C57 /* AppKit.framework */,
+				167B8647189E1B18007D9C57 /* CoreData.framework */,
+				167B8648189E1B18007D9C57 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		167B8649189E1B18007D9C57 /* image-viewer */ = {
+			isa = PBXGroup;
+			children = (
+				167DF57A18A0B69A00184458 /* Categories */,
+				16A8C17C189E3AC000B7BEF1 /* Core Data */,
+				167B867A189E1B6F007D9C57 /* Views */,
+				167B865E189E1B18007D9C57 /* Images.xcassets */,
+				167B864A189E1B18007D9C57 /* Supporting Files */,
+			);
+			path = "image-viewer";
+			sourceTree = "<group>";
+		};
+		167B864A189E1B18007D9C57 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				167B864B189E1B18007D9C57 /* image-viewer-Info.plist */,
+				167B864C189E1B18007D9C57 /* InfoPlist.strings */,
+				167B864F189E1B18007D9C57 /* main.m */,
+				167B8651189E1B18007D9C57 /* image-viewer-Prefix.pch */,
+				167B8652189E1B18007D9C57 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		167B866A189E1B19007D9C57 /* image-viewerTests */ = {
+			isa = PBXGroup;
+			children = (
+				167B8670189E1B19007D9C57 /* image_viewerTests.m */,
+				167B866B189E1B19007D9C57 /* Supporting Files */,
+			);
+			path = "image-viewerTests";
+			sourceTree = "<group>";
+		};
+		167B866B189E1B19007D9C57 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				167B866C189E1B19007D9C57 /* image-viewerTests-Info.plist */,
+				167B866D189E1B19007D9C57 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		167B867A189E1B6F007D9C57 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				16472EF418A48BFA00482889 /* TagView */,
+				16472EE818A3526800482889 /* ImageView */,
+				1645E0D318A33518009C0749 /* MainWindow */,
+				1645E0D418A3353E009C0749 /* BrowseView */,
+				167DF58218A0C34300184458 /* DirectoryItemView */,
+				167B867E189E1E05007D9C57 /* DirectoryView */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		167B867E189E1E05007D9C57 /* DirectoryView */ = {
+			isa = PBXGroup;
+			children = (
+				167B867F189E1E15007D9C57 /* DirectoryView.xib */,
+				167B8681189E1E3E007D9C57 /* DirectoryViewController.h */,
+				167B8682189E1E3E007D9C57 /* DirectoryViewController.m */,
+			);
+			name = DirectoryView;
+			sourceTree = "<group>";
+		};
+		167DF57A18A0B69A00184458 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				167DF57B18A0B6B600184458 /* NSViewController+MaximizedView.h */,
+				167DF57C18A0B6B600184458 /* NSViewController+MaximizedView.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		167DF58218A0C34300184458 /* DirectoryItemView */ = {
+			isa = PBXGroup;
+			children = (
+				167DF58318A0C35300184458 /* DirectoryItemView.xib */,
+				167DF58518A0C38100184458 /* DirectoryItemViewController.h */,
+				167DF58618A0C38100184458 /* DirectoryItemViewController.m */,
+				167DF58818A0C3AC00184458 /* ClickableBox.h */,
+				167DF58918A0C3AC00184458 /* ClickableBox.m */,
+			);
+			name = DirectoryItemView;
+			sourceTree = "<group>";
+		};
+		16A8C17C189E3AC000B7BEF1 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				167B865B189E1B18007D9C57 /* image_viewer.xcdatamodeld */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		167B863F189E1B18007D9C57 /* image-viewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 167B8674189E1B19007D9C57 /* Build configuration list for PBXNativeTarget "image-viewer" */;
+			buildPhases = (
+				167B863C189E1B18007D9C57 /* Sources */,
+				167B863D189E1B18007D9C57 /* Frameworks */,
+				167B863E189E1B18007D9C57 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "image-viewer";
+			productName = "image-viewer";
+			productReference = 167B8640189E1B18007D9C57 /* image-viewer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		167B8663189E1B19007D9C57 /* image-viewerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 167B8677189E1B19007D9C57 /* Build configuration list for PBXNativeTarget "image-viewerTests" */;
+			buildPhases = (
+				167B8660189E1B19007D9C57 /* Sources */,
+				167B8661189E1B19007D9C57 /* Frameworks */,
+				167B8662189E1B19007D9C57 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				167B8669189E1B19007D9C57 /* PBXTargetDependency */,
+			);
+			name = "image-viewerTests";
+			productName = "image-viewerTests";
+			productReference = 167B8664189E1B19007D9C57 /* image-viewerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		167B8638189E1B18007D9C57 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Robert Novak";
+				TargetAttributes = {
+					167B8663189E1B19007D9C57 = {
+						TestTargetID = 167B863F189E1B18007D9C57;
+					};
+				};
+			};
+			buildConfigurationList = 167B863B189E1B18007D9C57 /* Build configuration list for PBXProject "image-viewer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 167B8637189E1B18007D9C57;
+			productRefGroup = 167B8641189E1B18007D9C57 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				167B863F189E1B18007D9C57 /* image-viewer */,
+				167B8663189E1B19007D9C57 /* image-viewerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		167B863E189E1B18007D9C57 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16472EF618A48C0F00482889 /* TagView.xib in Resources */,
+				167B864E189E1B18007D9C57 /* InfoPlist.strings in Resources */,
+				167B8680189E1E15007D9C57 /* DirectoryView.xib in Resources */,
+				167B865F189E1B18007D9C57 /* Images.xcassets in Resources */,
+				16472EFC18A48EF100482889 /* TagItemView.xib in Resources */,
+				167DF58418A0C35300184458 /* DirectoryItemView.xib in Resources */,
+				16472EEA18A3527600482889 /* ImageView.xib in Resources */,
+				1645E0D618A335E7009C0749 /* BrowseView.xib in Resources */,
+				167B8654189E1B18007D9C57 /* Credits.rtf in Resources */,
+				167B865A189E1B18007D9C57 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		167B8662189E1B19007D9C57 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				167B866F189E1B19007D9C57 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		167B863C189E1B18007D9C57 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				167DF57D18A0B6B600184458 /* NSViewController+MaximizedView.m in Sources */,
+				167B8657189E1B18007D9C57 /* AppDelegate.m in Sources */,
+				1645E0D918A33609009C0749 /* BrowseViewController.m in Sources */,
+				167B865D189E1B18007D9C57 /* image_viewer.xcdatamodeld in Sources */,
+				16472EED18A3528400482889 /* ImageViewController.m in Sources */,
+				167B8683189E1E3E007D9C57 /* DirectoryViewController.m in Sources */,
+				167DF58A18A0C3AC00184458 /* ClickableBox.m in Sources */,
+				16472EFF18A48F0F00482889 /* TagItemViewController.m in Sources */,
+				167DF58018A0BF1200184458 /* MainController.m in Sources */,
+				167B8650189E1B18007D9C57 /* main.m in Sources */,
+				167DF58D18A2162E00184458 /* ColoredView.m in Sources */,
+				16472EF918A48C2000482889 /* TagViewController.m in Sources */,
+				167DF58718A0C38100184458 /* DirectoryItemViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		167B8660189E1B19007D9C57 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				167B8671189E1B19007D9C57 /* image_viewerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		167B8669189E1B19007D9C57 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 167B863F189E1B18007D9C57 /* image-viewer */;
+			targetProxy = 167B8668189E1B19007D9C57 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		167B864C189E1B18007D9C57 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				167B864D189E1B18007D9C57 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		167B8652189E1B18007D9C57 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				167B8653189E1B18007D9C57 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		167B8658189E1B18007D9C57 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				167B8659189E1B18007D9C57 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		167B866D189E1B19007D9C57 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				167B866E189E1B19007D9C57 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		167B8672189E1B19007D9C57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		167B8673189E1B19007D9C57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		167B8675189E1B19007D9C57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "image-viewer/image-viewer-Prefix.pch";
+				INFOPLIST_FILE = "image-viewer/image-viewer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		167B8676189E1B19007D9C57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "image-viewer/image-viewer-Prefix.pch";
+				INFOPLIST_FILE = "image-viewer/image-viewer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		167B8678189E1B19007D9C57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/image-viewer.app/Contents/MacOS/image-viewer";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "image-viewer/image-viewer-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "image-viewerTests/image-viewerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		167B8679189E1B19007D9C57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/image-viewer.app/Contents/MacOS/image-viewer";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "image-viewer/image-viewer-Prefix.pch";
+				INFOPLIST_FILE = "image-viewerTests/image-viewerTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		167B863B189E1B18007D9C57 /* Build configuration list for PBXProject "image-viewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				167B8672189E1B19007D9C57 /* Debug */,
+				167B8673189E1B19007D9C57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		167B8674189E1B19007D9C57 /* Build configuration list for PBXNativeTarget "image-viewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				167B8675189E1B19007D9C57 /* Debug */,
+				167B8676189E1B19007D9C57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		167B8677189E1B19007D9C57 /* Build configuration list for PBXNativeTarget "image-viewerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				167B8678189E1B19007D9C57 /* Debug */,
+				167B8679189E1B19007D9C57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		167B865B189E1B18007D9C57 /* image_viewer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				167B865C189E1B18007D9C57 /* image_viewer.xcdatamodel */,
+			);
+			currentVersion = 167B865C189E1B18007D9C57 /* image_viewer.xcdatamodel */;
+			path = image_viewer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 167B8638189E1B18007D9C57 /* Project object */;
+}
