@@ -19,8 +19,6 @@
 @synthesize removeButton = _removeButton;
 @synthesize backButton = _backButton;
 @synthesize directoryController = _directoryController;
-@synthesize bottomBar = _bottomBar;
-@synthesize viewMenu = _viewMenu;
 @synthesize imageController = _imageController;
 @synthesize tagController = _tagController;
 @synthesize zoomSlider = _zoomSlider;
@@ -156,7 +154,7 @@
         [_browseController addPath:[target path]];
         
         [self enable:_backButton, nil];
-        [self disable: _addButton, _removeButton, _viewMenu, nil];
+        [self disable: _addButton, _removeButton, nil];
         
         _state = mcBrowse;
     }
@@ -268,7 +266,7 @@
     if (_state == mcBrowse) {
         [self transition:_browseController to:_directoryController];
 
-        [self enable: _addButton, _removeButton, _viewMenu, nil];
+        [self enable: _addButton, _removeButton, nil];
         [self disable: _backButton, nil];
         
         _state = mcDirectory;

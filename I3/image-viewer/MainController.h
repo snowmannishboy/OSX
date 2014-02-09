@@ -36,10 +36,8 @@
 @property IBOutlet NSButton* addButton;
 @property IBOutlet NSButton* removeButton;
 @property IBOutlet NSSegmentedControl* nav;
-@property IBOutlet NSButton* viewMenu;
 @property IBOutlet NSSlider* zoomSlider;
 
-@property IBOutlet NSView* bottomBar;
 @property IBOutlet NSWindow* mainWindow;
 @property IBOutlet NSObject* directoryHelper;
 

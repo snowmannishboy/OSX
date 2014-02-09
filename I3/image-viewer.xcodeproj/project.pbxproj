@@ -54,6 +54,7 @@
 		163EB3C318A70A8800872DF4 /* DirectoryHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectoryHelper.m; sourceTree = "<group>"; };
 		163EB3C818A7480000872DF4 /* Directory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Directory.h; sourceTree = "<group>"; };
 		163EB3C918A7480000872DF4 /* Directory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Directory.m; sourceTree = "<group>"; };
+		163EB3CB18A8272E00872DF4 /* image-viewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "image-viewer.entitlements"; sourceTree = "<group>"; };
 		1645E0D518A335E7009C0749 /* BrowseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrowseView.xib; sourceTree = "<group>"; };
 		1645E0D718A33609009C0749 /* BrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseViewController.h; sourceTree = "<group>"; };
 		1645E0D818A33609009C0749 /* BrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseViewController.m; sourceTree = "<group>"; };
@@ -221,6 +222,7 @@
 		167B8649189E1B18007D9C57 /* image-viewer */ = {
 			isa = PBXGroup;
 			children = (
+				163EB3CB18A8272E00872DF4 /* image-viewer.entitlements */,
 				167DF57A18A0B69A00184458 /* Categories */,
 				16A8C17C189E3AC000B7BEF1 /* Core Data */,
 				167B867A189E1B6F007D9C57 /* Views */,
@@ -363,6 +365,13 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Robert Novak";
 				TargetAttributes = {
+					167B863F189E1B18007D9C57 = {
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
 					167B8663189E1B19007D9C57 = {
 						TestTargetID = 167B863F189E1B18007D9C57;
 					};
@@ -563,6 +572,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "image-viewer/image-viewer.entitlements";
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "image-viewer/image-viewer-Prefix.pch";
@@ -576,6 +587,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "image-viewer/image-viewer.entitlements";
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "image-viewer/image-viewer-Prefix.pch";

@@ -105,18 +105,18 @@
         </menu>
         <window title="image-viewer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <rect key="contentRect" x="335" y="390" width="825" height="559"/>
+            <rect key="contentRect" x="335" y="390" width="552" height="402"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="372">
-                <rect key="frame" x="0.0" y="0.0" width="825" height="559"/>
+                <rect key="frame" x="0.0" y="0.0" width="552" height="402"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <customView focusRingType="none" translatesAutoresizingMaskIntoConstraints="NO" id="7UZ-Le-b4Q">
-                        <rect key="frame" x="0.0" y="22" width="825" height="537"/>
+                        <rect key="frame" x="0.0" y="22" width="552" height="380"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </customView>
                     <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Tf6-Nr-4fS">
-                        <rect key="frame" x="693" y="4" width="92" height="15"/>
+                        <rect key="frame" x="420" y="4" width="92" height="15"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="92" id="sgU-ga-ZyJ"/>

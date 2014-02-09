@@ -83,7 +83,7 @@
         }
     }
     
-    NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"image_viewer2.storedata"];
+    NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"D305F315-48E5-4E3F-8236-FB769564F7D7.storedata"];
     NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
     if (![coordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error]) {
         [[NSApplication sharedApplication] presentError:error];
