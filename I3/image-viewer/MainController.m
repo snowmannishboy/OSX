@@ -77,6 +77,17 @@
     [_imageController setImage:[newImage path]];
 }
 
+- (void) keyDown:(NSEvent *)theEvent {
+    [super interpretKeyEvents:[NSArray arrayWithObjects:theEvent, nil]];
+}
+
+- (void) moveLeft:(id)sender {
+    if (_state == mcImage) [self moveBack];
+}
+
+- (void) moveRight: (id) sender {
+    if (_state == mcImage) [self moveForward];
+}
 
 - (void) scrollWheel:(NSEvent *)theEvent {
     if (_state == mcImage) {
