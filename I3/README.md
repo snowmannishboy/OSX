@@ -1,4 +1,4 @@
-'''Image Viewer'''
+Image Viewer
 ===
 
 
@@ -6,5 +6,5 @@ This application provies a utility to browse and view images on the OSX Filesyst
 
 
 
-'''Installation'''
+Installation
 ===
