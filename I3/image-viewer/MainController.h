@@ -53,8 +53,6 @@
 - (IBAction) addButtonClicked: (id) sender;
 - (IBAction) backButtonClicked: (id) sender;
 - (IBAction) navigateClicked: (id) sender;
-- (IBAction) tagMenuItemClicked:(id)sender;
-- (IBAction) directoryMenuItemClicked: (id) sender;
 - (IBAction) zoomLevelDidChange: (id) sender;
 - (void) boxDoubleClicked:(id) sender;
 

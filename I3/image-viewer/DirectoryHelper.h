@@ -12,17 +12,17 @@
 #import "Directory.h"
 
 
-@interface DirectoryHelper : NSObject
+@interface DirectoryHelper : NSControl
 
 @property IBOutlet AppDelegate* delegate;
 @property IBOutlet id controller;
+
 
 @property NSManagedObjectContext*   context;
 
 - (NSArray*) load;
 - (void) save: (NSDictionary*) obj;
 - (void) delete: (NSString*) identifier;
-
 
 
 @end

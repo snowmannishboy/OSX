@@ -21,6 +21,7 @@
     return self;
 }
 
+
 - (NSArray*) load {
     if (!_context) { if (_delegate) { _context = [_delegate managedObjectContext]; if (!_context) return nil; } }
     NSError* localError;
@@ -75,6 +76,7 @@
     if (![_context save:&local]) {
         NSLog(@"Error Saving Local Value");
     }
+    
 }
 
 

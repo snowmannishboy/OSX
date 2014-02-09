@@ -92,10 +92,10 @@
 - (void) scrollWheel:(NSEvent *)theEvent {
     if (_state == mcImage) {
         if (theEvent.scrollingDeltaY > 0.1) {
-            [self moveForward];
+            [self moveBack];
         }
         else if (theEvent.scrollingDeltaY < -0.1) {
-            [self moveBack];
+            [self moveForward];
         }
     }
 }
@@ -208,13 +208,14 @@
     
     [_zoomSlider setFloatValue:1.0];
     
-    
     NSArray* data = [_directoryHelper load];
     [data enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         [_directoryController addItem:obj];
     }];
     
 }
+
+
 
 - (void) windowWillStartLiveResize:(NSNotification *)notification {
 
@@ -284,6 +285,8 @@
         [_zoomSlider setFloatValue:1.0];
     }
 }
+
+
 
 
 - (void) windowDidLoad {
