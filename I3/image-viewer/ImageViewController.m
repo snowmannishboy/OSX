@@ -12,6 +12,8 @@
 
 @end
 
+static id _delegate;
+
 @implementation ImageViewController
 
 @synthesize inner = _inner;
@@ -35,6 +37,7 @@
     [_scrollView setMagnification:1.0];
 }
 
+
 - (void) awakeFromNib {
     [[self view] setHidden:YES];
 }
@@ -48,8 +51,48 @@
     else [_inner setImageScaling:NSImageScaleProportionallyDown];
 }
 
-
-
-
++ (void) setDelegate:(id)delegate {
+    _delegate = delegate;
+}
 
 @end
+
+
+
+@interface DelegatingScrollView : NSScrollView
+- (BOOL) acceptsFirstResponder;
+@end
+
+
+@implementation DelegatingScrollView
+- (id) init { self = [super init]; return self; }
+- (BOOL) acceptsFirstResponder { return NO; }
+- (void) scrollWheel:(NSEvent *)theEvent { }
+@end
+
+@interface DelegatingImageView : NSImageView
+- (BOOL) acceptsFirstResponder;
+- (void) scrollWheel:(NSEvent *)theEvent;
+@end
+
+@implementation DelegatingImageView
+
+- (BOOL) acceptsFirstResponder { return NO; }
+- (void) scrollWheel:(NSEvent *)theEvent {[_delegate scrollWheel:theEvent];}
+@end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

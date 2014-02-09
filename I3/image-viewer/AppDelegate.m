@@ -17,7 +17,9 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     [_window setWindowController:_mainController];
+    
 }
+
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "org.rnovak.image_viewer" in the user's Application Support directory.
 - (NSURL *)applicationFilesDirectory
@@ -81,7 +83,7 @@
         }
     }
     
-    NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"image_viewer.storedata"];
+    NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"image_viewer2.storedata"];
     NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
     if (![coordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error]) {
         [[NSApplication sharedApplication] presentError:error];

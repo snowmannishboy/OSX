@@ -32,6 +32,34 @@ static id<BrowserViewProtocol> _delegate;
     return self;
 }
 
+- (bvImage*) moveForward {
+    bvImage* result = nil;
+    NSUInteger total = [bvImages count];
+    NSUInteger currentIndex = [indexes firstIndex];
+    
+    currentIndex = (currentIndex < (total - 1)) ? (currentIndex + 1) : 0;
+    
+    indexes = [[NSIndexSet alloc] initWithIndex:currentIndex];
+    
+    result = (bvImage*) [bvImages objectAtIndex:currentIndex];
+    
+    return result;
+}
+
+- (bvImage*) moveBack {
+    bvImage* result = nil;
+    NSUInteger total = [bvImages count];
+    NSUInteger current = [indexes firstIndex];
+    
+    current = (current > 0) ? (current - 1) : (total - 1);
+    
+    result = (bvImage*) [bvImages objectAtIndex:current];
+    
+    indexes = [[NSIndexSet alloc] initWithIndex:current];
+    
+    return result;
+}
+
 - (void) awakeFromNib {
     [super awakeFromNib];
     [[self view] setHidden:YES];

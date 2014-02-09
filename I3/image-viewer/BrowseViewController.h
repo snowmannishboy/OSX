@@ -34,6 +34,9 @@
 - (void) addPath: (NSString*) path;
 - (void) clearPath;
 
+- (bvImage*) moveForward;
+- (bvImage*) moveBack;
+
 - (void) imageBrowserSelectionDidChange:(IKImageBrowserView *)aBrowser;
 - (void) imageBrowser:(IKImageBrowserView *)aBrowser backgroundWasRightClickedWithEvent:(NSEvent *)event;
 - (void) imageBrowser:(IKImageBrowserView *)aBrowser cellWasDoubleClickedAtIndex:(NSUInteger)index;

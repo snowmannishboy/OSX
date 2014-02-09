@@ -28,6 +28,10 @@
     return self;
 }
 
+- (BOOL) isItemSelected {
+    return ([_selected firstIndex] != NSNotFound);
+}
+
 - (void) awakeFromNib {
     _directories = [[NSMutableArray alloc] init];
     _selected = [[NSIndexSet alloc] init];
@@ -39,9 +43,14 @@
     
 }
 
-- (void) addItem:(NSString *)path {
-    NSDictionary* newItem = [NSDictionary dictionaryWithObjectsAndKeys:path, @"path", nil];
-    [_directoryController addObject:newItem];
+- (NSDictionary*) removeSelected {
+    NSDictionary* current = [_directories objectAtIndex:[_selected firstIndex]];
+    [_directoryController removeObject:current];
+    return current;
+}
+
+- (void) addItem:(id) item {
+    [_directoryController addObject:item];
 }
 
 @end

@@ -15,5 +15,5 @@
 
 - (void) setImage: (NSString*) img;
 - (void) clearImage;
-
++ (void) setDelegate: (id) delegate;
 @end

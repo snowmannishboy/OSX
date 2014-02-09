@@ -17,6 +17,9 @@
 @property IBOutlet NSArrayController* directoryController;
 @property IBOutlet NSCollectionView* collectionView;
 
-- (void) addItem: (NSString*) path;
+
+- (void) addItem: (id) path;
+- (NSDictionary*) removeSelected;
+- (BOOL) isItemSelected;
 
 @end

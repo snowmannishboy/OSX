@@ -649,12 +649,12 @@
         <window title="image-viewer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <rect key="contentRect" x="335" y="390" width="825" height="559"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
             <view key="contentView" id="372">
                 <rect key="frame" x="0.0" y="0.0" width="825" height="559"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="7UZ-Le-b4Q">
+                    <customView focusRingType="none" translatesAutoresizingMaskIntoConstraints="NO" id="7UZ-Le-b4Q">
                         <rect key="frame" x="0.0" y="22" width="825" height="537"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </customView>
@@ -696,7 +696,7 @@
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                             <connections>
-                                <action selector="backButtonClicked:" target="WbI-Io-tw2" id="YsJ-wL-uhR"/>
+                                <action selector="backButtonClicked:" target="WbI-Io-tw2" id="zNF-EX-rXt"/>
                             </connections>
                         </button>
                     </toolbarItem>
@@ -727,6 +727,9 @@
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
+                            <connections>
+                                <action selector="removeButtonClicked:" target="WbI-Io-tw2" id="swP-Vj-HvZ"/>
+                            </connections>
                         </button>
                     </toolbarItem>
                     <toolbarItem implicitItemIdentifier="F4D17E18-419A-40B8-9422-C4603268AD70" label="Navigate" paletteLabel="" id="aTD-x1-gP4">
@@ -761,7 +764,7 @@
             </toolbar>
             <contentBorderThickness minY="22"/>
             <connections>
-                <outlet property="delegate" destination="WbI-Io-tw2" id="mmc-L3-Xiu"/>
+                <outlet property="delegate" destination="WbI-Io-tw2" id="uGx-PQ-u4I"/>
             </connections>
         </window>
         <customObject id="494" customClass="AppDelegate">
@@ -775,43 +778,25 @@
             <connections>
                 <outlet property="addButton" destination="TsD-Vr-gyL" id="l15-6X-fF2"/>
                 <outlet property="backButton" destination="TgT-bg-kn3" id="LdI-Nz-dW3"/>
+                <outlet property="directoryHelper" destination="ldk-iE-bZI" id="JLj-dx-bmW"/>
+                <outlet property="mainWindow" destination="371" id="EnO-rO-QyL"/>
                 <outlet property="nav" destination="JCD-Ws-71b" id="dY2-Ax-odn"/>
                 <outlet property="removeButton" destination="P0P-l2-VVt" id="dgQ-iA-K8j"/>
                 <outlet property="view" destination="7UZ-Le-b4Q" id="TgD-DV-vGI"/>
-                <outlet property="viewMenu" destination="ied-Xk-Z8R" id="TVA-4U-s41"/>
                 <outlet property="window" destination="371" id="oED-Av-LyM"/>
                 <outlet property="zoomSlider" destination="Tf6-Nr-4fS" id="xkz-9q-Ghz"/>
             </connections>
         </customObject>
-        <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ied-Xk-Z8R">
-            <rect key="frame" x="0.0" y="0.0" width="150" height="25"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <popUpButtonCell key="cell" type="roundTextured" title="View" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="mixed" borderStyle="border" imageScaling="proportionallyDown" inset="2" pullsDown="YES" selectedItem="FPm-Eo-S7f" id="U0k-SK-NFO">
-                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                <font key="font" metaFont="menu"/>
-                <menu key="menu" title="OtherViews" id="yZX-p3-1Yz">
-                    <items>
-                        <menuItem title="View" state="mixed" hidden="YES" id="FPm-Eo-S7f"/>
-                        <menuItem title="Directories" image="NSFolder" id="d71-Zx-s6A">
-                            <connections>
-                                <action selector="directoryMenuItemClicked:" target="WbI-Io-tw2" id="8EA-Ot-aEH"/>
-                            </connections>
-                        </menuItem>
-                        <menuItem title="Tags" image="NSMultipleDocuments" id="zFq-tv-CUU">
-                            <connections>
-                                <action selector="tagMenuItemClicked:" target="WbI-Io-tw2" id="Tc5-z3-sze"/>
-                            </connections>
-                        </menuItem>
-                    </items>
-                </menu>
-            </popUpButtonCell>
-        </popUpButton>
+        <customObject id="ldk-iE-bZI" customClass="DirectoryHelper">
+            <connections>
+                <outlet property="controller" destination="WbI-Io-tw2" id="LOD-hh-5W9"/>
+                <outlet property="delegate" destination="494" id="xN3-na-jzr"/>
+            </connections>
+        </customObject>
     </objects>
     <resources>
         <image name="NSAddTemplate" width="8" height="8"/>
-        <image name="NSFolder" width="32" height="32"/>
         <image name="NSLeftFacingTriangleTemplate" width="9" height="9"/>
-        <image name="NSMultipleDocuments" width="32" height="32"/>
         <image name="NSRemoveTemplate" width="8" height="8"/>
         <image name="NSRightFacingTriangleTemplate" width="9" height="9"/>
     </resources>

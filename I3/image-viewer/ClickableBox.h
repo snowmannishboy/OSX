@@ -16,7 +16,9 @@
 
 @interface ClickableBox : NSBox
 
+@property NSString* id;
 @property NSString* path;
+@property NSString* name;
 
 + (void) setDelegate:(id<ClickableBoxDelegate>) delegate;
 

@@ -15,13 +15,11 @@
 @implementation DirectoryItemViewController
 
 @synthesize box = _box;
-@synthesize directoryRepresentation = _directoryRepresentation;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Initialization code here.
     }
     return self;
 }
@@ -39,9 +37,13 @@
     [super setRepresentedObject:representedObject];
     NSDictionary* dict = (NSDictionary*)representedObject;
     NSString* path = (NSString*)[dict objectForKey:@"path"];
+    NSString* identifer = (NSString*) [dict objectForKey:@"identifier"];
+    NSString* name = (NSString*) [dict objectForKey:@"name"];
     if (_path) {
-        [_path setStringValue:[[NSFileManager defaultManager] displayNameAtPath:path]];
+        [_path setStringValue:name];
         [_box setPath:path];
+        [_box setName:name];
+        [_box setId:identifer];
     }
 }
 

@@ -25,6 +25,8 @@
 @synthesize tagController = _tagController;
 @synthesize zoomSlider = _zoomSlider;
 @synthesize zoomLevel = _zoomLevel;
+@synthesize mainWindow = _mainWindow;
+@synthesize directoryHelper = _directoryHelper;
 
 - (IBAction)zoomLevelDidChange:(id)sender {
     if (_state == mcImage) {
@@ -33,6 +35,12 @@
     }
 }
 
+- (IBAction)removeButtonClicked:(id)sender {
+    if (_state == mcDirectory && [_directoryController isItemSelected]) {
+        NSDictionary* current = [_directoryController removeSelected];
+        [_directoryHelper delete:[current objectForKey:@"identifier"]];
+    }
+}
 
 
 - (void) tagItemClicked:(id)sender {
@@ -53,10 +61,47 @@
     va_end(args);
 }
 
+- (void) moveBack {
+    bvImage* newImage = [_browseController moveBack];
+    [[_imageController scrollView] setMagnification:1.0];
+    _zoomLevel = 1.0;
+    [_zoomSlider setFloatValue:1.0];
+    [_imageController setImage: [newImage path]];
+}
+
+- (void) moveForward {
+    bvImage* newImage = [_browseController moveForward];
+    [[_imageController scrollView] setMagnification:1.0];
+    _zoomLevel = 1.0;
+    [_zoomSlider setFloatValue:1.0];
+    [_imageController setImage:[newImage path]];
+}
+
+
+- (void) scrollWheel:(NSEvent *)theEvent {
+    if (_state == mcImage) {
+        if (theEvent.scrollingDeltaY > 0.1) {
+            [self moveForward];
+        }
+        else if (theEvent.scrollingDeltaY < -0.1) {
+            [self moveBack];
+        }
+    }
+}
+
 
 - (IBAction)navigateClicked:(id)sender {
-
+    if (_state == mcImage) {
+        NSSegmentedCell* target = sender;
+        if ([target selectedSegment] == 0) {
+            [self moveBack];
+        }
+        else {
+            [self moveForward];
+        }
+    }
 }
+
 
 - (IBAction) tagMenuItemClicked:(id)sender {
     if (_state == mcDirectory) {
@@ -123,22 +168,27 @@
     if (self) {
         [ClickableBox setDelegate:self];
         [BrowseViewController setDelegate:self];
+        [ImageViewController setDelegate:self];
         
         _state = mcDirectory;
         
         _directoryController = [[DirectoryViewController alloc] init];
         _browseController = [[BrowseViewController alloc] init];
         _imageController = [[ImageViewController alloc] init];
-        _tagController = [[TagViewController alloc] init];
         
+        [[self window] becomeFirstResponder];
+    
     }
     return self;
+}
+
+- (BOOL) acceptsFirstResponder {
+    return YES;
 }
 
 
 - (void) awakeFromNib {
     
-    [_tagController addToSuper:_view];
     [_imageController addToSuper:_view];
     [_browseController addToSuper:_view];
     [_directoryController addToSuper:_view];
@@ -147,15 +197,20 @@
     
     [_zoomSlider setFloatValue:1.0];
     
-
+    
+    NSArray* data = [_directoryHelper load];
+    [data enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [_directoryController addItem:obj];
+    }];
+    
 }
 
 - (void) windowWillStartLiveResize:(NSNotification *)notification {
 
     if (_state == mcImage) {
         [[_imageController scrollView] setMagnification:1.0];
-        //[_zoomSlider setFloatValue:1.0];
-        //[[_imageController scrollView] setMagnification:1.0];
+        [_zoomSlider setFloatValue:1.0];
+        [[_imageController scrollView] setMagnification:1.0];
     }
 
 }
@@ -163,6 +218,7 @@
 - (void) windowDidEndLiveResize:(NSNotification *)notification {
     if (_state == mcImage) {
         [[_imageController scrollView] setMagnification:_zoomLevel];
+        [_zoomSlider setFloatValue:_zoomLevel];
     }
 }
 
@@ -183,14 +239,16 @@
             NSArray* urls = [open URLs];
             [urls enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                 NSURL* url = (NSURL*) obj;
-              NSString* path = [url path];
-                [_directoryController addItem:path];
+                NSString* path = [url path];
+                NSString* displayName = [[NSFileManager defaultManager] displayNameAtPath:path];
+                NSDictionary* objectToSave = [[NSDictionary alloc] initWithObjectsAndKeys:path, @"path", displayName, @"name", @"", @"identifier", nil];
+                [_directoryController addItem:objectToSave];
+                [_directoryHelper save: objectToSave];
             }];
         }
     }
     else if (_state == mcTag) {
-        NSDictionary* newObj = [NSDictionary dictionaryWithObjectsAndKeys:@"New Tag", @"name", nil];
-        [_tagController addObject:newObj];
+
     }
 }
 
@@ -214,6 +272,11 @@
         [_imageController clearImage];
         [_zoomSlider setFloatValue:1.0];
     }
+}
+
+
+- (void) windowDidLoad {
+    [super windowDidLoad];
 }
 
 @end

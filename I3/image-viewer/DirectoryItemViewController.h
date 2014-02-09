@@ -14,6 +14,5 @@
 @property IBOutlet NSView* inner;
 @property IBOutlet NSTextField* path;
 @property IBOutlet ClickableBox* box;
-@property IBOutlet NSImageView* directoryRepresentation;
 
 @end

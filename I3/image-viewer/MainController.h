@@ -13,6 +13,11 @@
 #import "BrowseViewController.h"
 #import "ImageViewController.h"
 
+@interface NSObject(DirectoryService)
+-(NSArray*) load;
+- (void) save: (NSDictionary*) dict;
+- (void) delete: (NSString*) identifier;
+@end
 
 @interface MainController : NSWindowController<ClickableBoxDelegate, BrowserViewProtocol, TagItemProtocol, NSWindowDelegate> {
     
@@ -35,13 +40,15 @@
 @property IBOutlet NSSlider* zoomSlider;
 
 @property IBOutlet NSView* bottomBar;
+@property IBOutlet NSWindow* mainWindow;
+@property IBOutlet NSObject* directoryHelper;
 
 @property DirectoryViewController* directoryController;
 @property BrowseViewController* browseController;
 @property ImageViewController* imageController;
 @property TagViewController* tagController;
 @property double zoomLevel;
-
+@property BOOL directorySelected;
 
 - (IBAction) addButtonClicked: (id) sender;
 - (IBAction) backButtonClicked: (id) sender;
@@ -50,5 +57,7 @@
 - (IBAction) directoryMenuItemClicked: (id) sender;
 - (IBAction) zoomLevelDidChange: (id) sender;
 - (void) boxDoubleClicked:(id) sender;
+
+- (void) scrollWheel:(NSEvent *)theEvent;
 
 @end

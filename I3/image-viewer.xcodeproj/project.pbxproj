@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		163EB3C418A70A8800872DF4 /* DirectoryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 163EB3C318A70A8800872DF4 /* DirectoryHelper.m */; };
+		163EB3CA18A7480000872DF4 /* Directory.m in Sources */ = {isa = PBXBuildFile; fileRef = 163EB3C918A7480000872DF4 /* Directory.m */; };
 		1645E0D618A335E7009C0749 /* BrowseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1645E0D518A335E7009C0749 /* BrowseView.xib */; };
 		1645E0D918A33609009C0749 /* BrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1645E0D818A33609009C0749 /* BrowseViewController.m */; };
 		1645E0DB18A337B3009C0749 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1645E0DA18A337B3009C0749 /* Quartz.framework */; };
@@ -35,7 +37,6 @@
 		167DF58418A0C35300184458 /* DirectoryItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 167DF58318A0C35300184458 /* DirectoryItemView.xib */; };
 		167DF58718A0C38100184458 /* DirectoryItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 167DF58618A0C38100184458 /* DirectoryItemViewController.m */; };
 		167DF58A18A0C3AC00184458 /* ClickableBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 167DF58918A0C3AC00184458 /* ClickableBox.m */; };
-		167DF58D18A2162E00184458 /* ColoredView.m in Sources */ = {isa = PBXBuildFile; fileRef = 167DF58C18A2162E00184458 /* ColoredView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		163EB3C218A70A8800872DF4 /* DirectoryHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryHelper.h; sourceTree = "<group>"; };
+		163EB3C318A70A8800872DF4 /* DirectoryHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectoryHelper.m; sourceTree = "<group>"; };
+		163EB3C818A7480000872DF4 /* Directory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Directory.h; sourceTree = "<group>"; };
+		163EB3C918A7480000872DF4 /* Directory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Directory.m; sourceTree = "<group>"; };
 		1645E0D518A335E7009C0749 /* BrowseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BrowseView.xib; sourceTree = "<group>"; };
 		1645E0D718A33609009C0749 /* BrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseViewController.h; sourceTree = "<group>"; };
 		1645E0D818A33609009C0749 /* BrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseViewController.m; sourceTree = "<group>"; };
@@ -95,8 +100,6 @@
 		167DF58618A0C38100184458 /* DirectoryItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectoryItemViewController.m; sourceTree = "<group>"; };
 		167DF58818A0C3AC00184458 /* ClickableBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClickableBox.h; sourceTree = "<group>"; };
 		167DF58918A0C3AC00184458 /* ClickableBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClickableBox.m; sourceTree = "<group>"; };
-		167DF58B18A2162E00184458 /* ColoredView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColoredView.h; sourceTree = "<group>"; };
-		167DF58C18A2162E00184458 /* ColoredView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColoredView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +132,6 @@
 				167B8655189E1B18007D9C57 /* AppDelegate.h */,
 				167B8656189E1B18007D9C57 /* AppDelegate.m */,
 				167B8658189E1B18007D9C57 /* MainMenu.xib */,
-				167DF58B18A2162E00184458 /* ColoredView.h */,
-				167DF58C18A2162E00184458 /* ColoredView.m */,
 			);
 			name = MainWindow;
 			sourceTree = "<group>";
@@ -307,6 +308,10 @@
 			isa = PBXGroup;
 			children = (
 				167B865B189E1B18007D9C57 /* image_viewer.xcdatamodeld */,
+				163EB3C218A70A8800872DF4 /* DirectoryHelper.h */,
+				163EB3C318A70A8800872DF4 /* DirectoryHelper.m */,
+				163EB3C818A7480000872DF4 /* Directory.h */,
+				163EB3C918A7480000872DF4 /* Directory.m */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -418,14 +423,15 @@
 				167DF57D18A0B6B600184458 /* NSViewController+MaximizedView.m in Sources */,
 				167B8657189E1B18007D9C57 /* AppDelegate.m in Sources */,
 				1645E0D918A33609009C0749 /* BrowseViewController.m in Sources */,
+				163EB3CA18A7480000872DF4 /* Directory.m in Sources */,
 				167B865D189E1B18007D9C57 /* image_viewer.xcdatamodeld in Sources */,
 				16472EED18A3528400482889 /* ImageViewController.m in Sources */,
 				167B8683189E1E3E007D9C57 /* DirectoryViewController.m in Sources */,
+				163EB3C418A70A8800872DF4 /* DirectoryHelper.m in Sources */,
 				167DF58A18A0C3AC00184458 /* ClickableBox.m in Sources */,
 				16472EFF18A48F0F00482889 /* TagItemViewController.m in Sources */,
 				167DF58018A0BF1200184458 /* MainController.m in Sources */,
 				167B8650189E1B18007D9C57 /* main.m in Sources */,
-				167DF58D18A2162E00184458 /* ColoredView.m in Sources */,
 				16472EF918A48C2000482889 /* TagViewController.m in Sources */,
 				167DF58718A0C38100184458 /* DirectoryItemViewController.m in Sources */,
 			);

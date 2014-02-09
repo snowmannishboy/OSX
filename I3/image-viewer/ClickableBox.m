@@ -13,6 +13,8 @@ static id<ClickableBoxDelegate> _delegate;
 @implementation ClickableBox
 
 @synthesize path = _path;
+@synthesize id = _id;
+@synthesize name = _name;
 
 - (id)initWithFrame:(NSRect)frame
 {
