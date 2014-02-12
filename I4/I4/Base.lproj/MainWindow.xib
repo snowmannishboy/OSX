@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="494" id="495"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <menu title="AMainMenu" systemMenu="main" id="29">
+            <items>
+                <menuItem title="I4" id="56">
+                    <menu key="submenu" title="I4" systemMenu="apple" id="57">
+                        <items>
+                            <menuItem title="About I4" id="58">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="236">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Preferences…" keyEquivalent="," id="129"/>
+                            <menuItem isSeparatorItem="YES" id="143">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Services" id="131">
+                                <menu key="submenu" title="Services" systemMenu="services" id="130"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="144">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Hide I4" keyEquivalent="h" id="134">
+                                <connections>
+                                    <action selector="hide:" target="-1" id="367"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hide Others" keyEquivalent="h" id="145">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-1" id="368"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show All" id="150">
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-1" id="370"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="149">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Quit I4" keyEquivalent="q" id="136">
+                                <connections>
+                                    <action selector="terminate:" target="-3" id="449"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="View" id="295">
+                    <menu key="submenu" title="View" id="296">
+                        <items>
+                            <menuItem title="Show Toolbar" keyEquivalent="t" id="297">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="toggleToolbarShown:" target="-1" id="366"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Customize Toolbar…" id="298">
+                                <connections>
+                                    <action selector="runToolbarCustomizationPalette:" target="-1" id="365"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Window" id="19">
+                    <menu key="submenu" title="Window" systemMenu="window" id="24">
+                        <items>
+                            <menuItem title="Minimize" keyEquivalent="m" id="23">
+                                <connections>
+                                    <action selector="performMiniaturize:" target="-1" id="37"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Zoom" id="239">
+                                <connections>
+                                    <action selector="performZoom:" target="-1" id="240"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="92">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Bring All to Front" id="5">
+                                <connections>
+                                    <action selector="arrangeInFront:" target="-1" id="39"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Help" id="490">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Help" systemMenu="help" id="491">
+                        <items>
+                            <menuItem title="I4 Help" keyEquivalent="?" id="492">
+                                <connections>
+                                    <action selector="showHelp:" target="-1" id="493"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+        </menu>
+        <window title="ImageViewer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="335" y="390" width="728" height="519"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
+            <view key="contentView" id="372">
+                <rect key="frame" x="0.0" y="0.0" width="728" height="519"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="wbQ-Va-1uB">
+                        <rect key="frame" x="0.0" y="25" width="728" height="494"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </customView>
+                    <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZL5-cc-N1T">
+                        <rect key="frame" x="289" y="2" width="150" height="15"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="J9j-TT-RE6"/>
+                        </constraints>
+                        <sliderCell key="cell" controlSize="mini" state="on" alignment="left" minValue="0.5" maxValue="4" doubleValue="1" tickMarkPosition="above" sliderType="linear" id="96Y-Ui-kDg"/>
+                        <connections>
+                            <action selector="__zoom_changed:" target="ITx-Wo-idi" id="e8e-L2-ABJ"/>
+                            <binding destination="ITx-Wo-idi" name="value" keyPath="self.zoomLevel" id="TAa-5J-xu8"/>
+                        </connections>
+                    </slider>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="centerX" secondItem="ZL5-cc-N1T" secondAttribute="centerX" id="2sK-3k-7r8"/>
+                    <constraint firstItem="wbQ-Va-1uB" firstAttribute="leading" secondItem="372" secondAttribute="leading" id="3AR-b8-hT9"/>
+                    <constraint firstItem="wbQ-Va-1uB" firstAttribute="top" secondItem="372" secondAttribute="top" id="Tbe-W9-n2k"/>
+                    <constraint firstAttribute="trailing" secondItem="wbQ-Va-1uB" secondAttribute="trailing" id="fUV-pI-FSE"/>
+                    <constraint firstAttribute="bottom" secondItem="ZL5-cc-N1T" secondAttribute="bottom" constant="3" id="mmd-Lv-OsU"/>
+                    <constraint firstAttribute="bottom" secondItem="wbQ-Va-1uB" secondAttribute="bottom" constant="25" id="wJk-lg-LDc"/>
+                </constraints>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="78F4EAC5-97D6-4AC2-BB32-68DA27092BB4" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="FdB-Ch-SBw">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="44162509-9FA8-47F6-BF0C-3662C1D7A8F2" label="" paletteLabel="Remove" image="NSRemoveTemplate" id="ZAi-YW-Z7f">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="50" height="28"/>
+                        <size key="maxSize" width="50" height="43"/>
+                        <button key="view" verticalHuggingPriority="750" id="uMW-w0-XE9">
+                            <rect key="frame" x="0.0" y="14" width="50" height="28"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSRemoveTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XtO-da-ERx">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="__del_buttonClicked:" target="ITx-Wo-idi" id="Nu8-YA-nYA"/>
+                            </connections>
+                        </button>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="NQR-jE-5Gk"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="IdX-vU-Ss3"/>
+                    <toolbarItem implicitItemIdentifier="51E111AF-7544-4B5C-888D-067ED8CAFD10" label="" paletteLabel="Back" image="NSLeftFacingTriangleTemplate" id="ETY-kU-ePa">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="50" height="28"/>
+                        <size key="maxSize" width="50" height="32"/>
+                        <button key="view" verticalHuggingPriority="750" id="wPi-1y-ii3">
+                            <rect key="frame" x="0.0" y="14" width="50" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSLeftFacingTriangleTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="k6h-gj-M4E">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="__back_buttonClicked:" target="ITx-Wo-idi" id="F98-rQ-cIF"/>
+                            </connections>
+                        </button>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="C7E4A818-16B4-4D64-869B-0F5BFE77B095" label="" paletteLabel="Add" image="NSAddTemplate" id="1P9-ja-wdb">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="50" height="28"/>
+                        <size key="maxSize" width="50" height="32"/>
+                        <button key="view" verticalHuggingPriority="750" id="QD5-bf-UVh">
+                            <rect key="frame" x="0.0" y="14" width="50" height="31"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sAi-H7-nNe">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="__add_buttonClicked:" target="ITx-Wo-idi" id="Ejw-4L-Vec"/>
+                            </connections>
+                        </button>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="ETY-kU-ePa"/>
+                    <toolbarItem reference="1P9-ja-wdb"/>
+                    <toolbarItem reference="NQR-jE-5Gk"/>
+                    <toolbarItem reference="ZAi-YW-Z7f"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <contentBorderThickness minY="25"/>
+        </window>
+        <customObject id="494" customClass="AppDelegate">
+            <connections>
+                <outlet property="mainController" destination="ITx-Wo-idi" id="Vq1-jf-lFR"/>
+                <outlet property="window" destination="371" id="532"/>
+            </connections>
+        </customObject>
+        <customObject id="420" customClass="NSFontManager"/>
+        <customObject id="ITx-Wo-idi" customClass="MainWindowController">
+            <connections>
+                <outlet property="addButton" destination="QD5-bf-UVh" id="0PL-Ve-CDE"/>
+                <outlet property="backButton" destination="wPi-1y-ii3" id="ttX-zV-HH5"/>
+                <outlet property="contentView" destination="wbQ-Va-1uB" id="t66-9c-O3Y"/>
+                <outlet property="delButton" destination="uMW-w0-XE9" id="ZGp-ta-mUl"/>
+                <outlet property="service" destination="XvG-LZ-4ij" id="oIl-07-7lr"/>
+                <outlet property="window" destination="371" id="krC-R8-ERL"/>
+                <outlet property="zoomSlider" destination="ZL5-cc-N1T" id="mtT-TN-nfI"/>
+            </connections>
+        </customObject>
+        <customObject id="XvG-LZ-4ij" customClass="DirectoryService">
+            <connections>
+                <outlet property="delegate" destination="494" id="Om4-cu-A7X"/>
+            </connections>
+        </customObject>
+    </objects>
+    <resources>
+        <image name="NSAddTemplate" width="8" height="8"/>
+        <image name="NSLeftFacingTriangleTemplate" width="9" height="9"/>
+        <image name="NSRemoveTemplate" width="8" height="8"/>
+    </resources>
+</document>
