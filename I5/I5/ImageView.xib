@@ -18,10 +18,10 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="390"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0c-Po-Yk6">
+                <scrollView autoresizesSubviews="NO" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0c-Po-Yk6">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="390"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <clipView key="contentView" id="48l-S1-38m">
+                    <clipView key="contentView" autoresizesSubviews="NO" id="48l-S1-38m">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="390"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -55,7 +55,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="PuQ-v3-bRM">
-                        <rect key="frame" x="464" y="0.0" width="16" height="390"/>
+                        <rect key="frame" x="465" y="0.0" width="15" height="390"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>

@@ -11,6 +11,9 @@
 #import "NSViewController+MaximizedSubView.h"
 
 
+const static double DEFAULT_ZOOM_IMAGES = 1.00;
+const static double DEFAULT_ZOOM_BROWSE = 0.45;
+
 @class DirectoryService;
 @class DirectoryViewController;
 @class DirectoryModel;
@@ -21,13 +24,15 @@
 @class ImageModel;
 
 
-@interface MainWindowController : NSWindowController {
+@interface MainWindowController : NSWindowController<NSWindowDelegate> {
     enum {
         directory,
         browse,
         image
     } state;
     
+    double __browseZoom;
+    NSRect  previous;
 }
 
 @property (nonatomic, strong) DirectoryViewController* directoryController;

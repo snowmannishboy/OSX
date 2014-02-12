@@ -650,7 +650,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
             <rect key="contentRect" x="629" y="282" width="705" height="534"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="372">
                 <rect key="frame" x="0.0" y="0.0" width="705" height="534"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -763,6 +763,9 @@
                 </defaultToolbarItems>
             </toolbar>
             <contentBorderThickness minY="25"/>
+            <connections>
+                <outlet property="delegate" destination="ANy-mn-v62" id="Vs2-sJ-y5y"/>
+            </connections>
         </window>
         <customObject id="494" customClass="AppDelegate">
             <connections>

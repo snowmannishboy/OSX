@@ -37,6 +37,7 @@
     self = [super initWithWindow:window];
     if (self) {
         state = directory;
+        __browseZoom = DEFAULT_ZOOM_BROWSE;
         
         _directoryController = [[DirectoryViewController alloc] init];
         _browseController = [[BrowseViewController alloc] init];
@@ -99,6 +100,7 @@
         [_imageController clearImage];
         [self disable:_nav, nil];
         [self transitionFrom:_imageController to:_browseController];
+        [_zoom setFloatValue:__browseZoom * 2.5];
         state = browse;
     }
 }
@@ -112,7 +114,13 @@
 }
 
 - (IBAction)_zoom:(id)sender {
-    
+    if (state == browse) {
+        __browseZoom = [_zoom floatValue] / 2.5;
+        [[_browseController browserView] setZoomValue:([_zoom floatValue] / 2.5)];
+    }
+    else if (state == image) {
+        [[_imageController scrollView] setMagnification:([_zoom floatValue] + 0.75)];
+    }
 }
 
 
@@ -124,6 +132,7 @@
         [_browseController open:model];
         [self disable:_add, _rm, nil];
         [self enable: _zoom, _back, nil];
+        [_zoom setFloatValue:__browseZoom * 2.5];
         state = browse;
     }
 }
@@ -146,8 +155,39 @@
         [self enable:_nav, nil];
         
         [_imageController setImage:[target imageRepresentation]];
+        [_zoom setFloatValue:0.25];
     }
 }
+
+
+/** Event Notifications **/
+
+- (void) windowWillStartLiveResize:(NSNotification *)notification {
+    if (state == image) {
+        previous = [[_imageController scrollView] documentVisibleRect];
+    }
+}
+
+
+- (void) windowDidResize:(NSNotification *)notification {
+    if (state == image) {
+        
+        NSRect imageBounds = [[_imageController imageView] bounds];
+        
+        NSRect scrollBounds = [[_imageController scrollView] documentVisibleRect];
+        
+        double x = (imageBounds.size.width - scrollBounds.size.width) / 2;
+        
+        double y = (imageBounds.size.height - scrollBounds.size.height) / 2;
+        
+        //NSRect new = NSMakeRect(x, y, scrollBounds.size.width, scrollBounds.size.height);
+        
+        [[[_imageController scrollView] documentView] scrollPoint:NSMakePoint(x, y)];
+        
+    }
+}
+
+
 
 
 /****************** Useful ********************/
@@ -190,6 +230,9 @@
 - (void) transitionFrom:(NSViewController *)from to:(NSViewController *)to {
     [[from view] setHidden:YES];
     [[to view] setHidden:NO];
+    [[self zoom] setFloatValue:1.0];
+    [[_browseController browserView] setZoomValue:__browseZoom];
+    [[_imageController scrollView] setMagnification:1.0];
 }
 
 
