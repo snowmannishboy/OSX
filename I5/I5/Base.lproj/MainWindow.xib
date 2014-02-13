@@ -649,14 +649,14 @@
         <window title="Image Viewer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
-            <rect key="contentRect" x="629" y="282" width="705" height="534"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="contentRect" x="629" y="282" width="755" height="561"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
             <view key="contentView" id="372">
-                <rect key="frame" x="0.0" y="0.0" width="705" height="534"/>
+                <rect key="frame" x="0.0" y="0.0" width="755" height="561"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sYx-YC-KKd" userLabel="Zoom">
-                        <rect key="frame" x="535" y="4" width="150" height="15"/>
+                        <rect key="frame" x="585" y="4" width="150" height="15"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="150" id="9cs-xY-RXk"/>
@@ -667,7 +667,7 @@
                         </connections>
                     </slider>
                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="2Uv-x4-pDW">
-                        <rect key="frame" x="0.0" y="25" width="705" height="509"/>
+                        <rect key="frame" x="0.0" y="25" width="755" height="536"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </customView>
                 </subviews>

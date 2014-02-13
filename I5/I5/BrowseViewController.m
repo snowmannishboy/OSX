@@ -39,6 +39,7 @@ static void (*callableAction)(id, SEL, id);
     _images = [[NSMutableArray alloc] init];
     _importedImages = [[NSMutableArray alloc] init];
     _selectedIndexes = [[NSIndexSet alloc] init];
+    [_browserView bind:@"selectionIndexes" toObject:self withKeyPath:@"self.selectedIndexes" options:nil];
 }
 
 - (void) clear {
@@ -97,6 +98,31 @@ static void (*callableAction)(id, SEL, id);
 - (id) imageBrowser:(IKImageBrowserView *)aBrowser itemAtIndex:(NSUInteger)index {
     return [_images objectAtIndex:index];
 }
+
+
+- (ImageModel*) next {
+    ImageModel* result = nil;
+    NSUInteger current = [_selectedIndexes firstIndex];
+    if (current != NSNotFound) {
+        current = (current < ([_images count] - 1)) ? (current + 1) : 0;
+        result = [_images objectAtIndex:current];
+        _selectedIndexes = [[NSIndexSet alloc] initWithIndex:current];
+    }
+    return result;
+}
+
+- (ImageModel*) previous {
+    ImageModel* result = nil;
+    NSUInteger current = [_selectedIndexes firstIndex];
+    if (current != NSNotFound) {
+        current = (current > 0) ? (current - 1) : ([_images count] - 1);
+        result = [_images objectAtIndex:current];
+        _selectedIndexes = [[NSIndexSet alloc] initWithIndex:current];
+    }
+    return result;
+}
+
+
 
 - (void) imageBrowser:(IKImageBrowserView *)aBrowser cellWasDoubleClickedAtIndex:(NSUInteger)index {
     if (callableAction)

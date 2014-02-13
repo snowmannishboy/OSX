@@ -18,7 +18,9 @@
 @property (nonatomic, strong) IBOutlet AppDelegate *delegate;
 
 - (NSArray*)    load;
+- (DirectoryModel*) check: (NSString*) path;
 - (void)        save: (DirectoryModel*) target;
+- (BOOL)        remove:(DirectoryModel*) target;
 
 + (void) setAction: (SEL) action target: (id) target;
 

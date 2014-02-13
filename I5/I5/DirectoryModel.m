@@ -41,6 +41,11 @@
         _display = [[NSFileManager defaultManager] displayNameAtPath:_path];
         _url = url;
         _bookmark = [url bookmarkDataWithOptions:NSURLBookmarkCreationWithSecurityScope includingResourceValuesForKeys:nil relativeToURL:nil error:&local];
+        
+        if (local) {
+            NSLog(@"Error Mutherfucker, %@", [local localizedDescription]);
+        }
+        
         _identifier = [self generateUUID];
     }
     return self;

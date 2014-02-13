@@ -26,7 +26,6 @@
 		16F10DE018A9E2490051AC7D /* DirectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F10DDF18A9E2490051AC7D /* DirectoryViewController.m */; };
 		16F10DE218A9E2580051AC7D /* DirectoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16F10DE118A9E2580051AC7D /* DirectoryView.xib */; };
 		16F10DE518A9E4630051AC7D /* DirectoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F10DE418A9E4630051AC7D /* DirectoryModel.m */; };
-		16F10DE818A9EA7B0051AC7D /* Directory.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F10DE718A9EA7B0051AC7D /* Directory.m */; };
 		16F10DEB18A9EAC00051AC7D /* DirectoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F10DEA18A9EAC00051AC7D /* DirectoryService.m */; };
 		16F10DEF18A9F5E90051AC7D /* DirectoryItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F10DEE18A9F5E90051AC7D /* DirectoryItemViewController.m */; };
 		16F10DF118A9F5F90051AC7D /* DirectoryItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16F10DF018A9F5F90051AC7D /* DirectoryItemView.xib */; };
@@ -37,6 +36,7 @@
 		16F10DFF18AB12F60051AC7D /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F10DFE18AB12F60051AC7D /* CoreServices.framework */; };
 		16F10E0218AB292D0051AC7D /* ImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16F10E0118AB292D0051AC7D /* ImageView.xib */; };
 		16F10E0518AB294B0051AC7D /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F10E0418AB294B0051AC7D /* ImageViewController.m */; };
+		16F10E0B18AC9F720051AC7D /* Directory.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F10E0A18AC9F720051AC7D /* Directory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,8 +83,6 @@
 		16F10DE118A9E2580051AC7D /* DirectoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DirectoryView.xib; sourceTree = "<group>"; };
 		16F10DE318A9E4630051AC7D /* DirectoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryModel.h; sourceTree = "<group>"; };
 		16F10DE418A9E4630051AC7D /* DirectoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectoryModel.m; sourceTree = "<group>"; };
-		16F10DE618A9EA7B0051AC7D /* Directory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Directory.h; sourceTree = "<group>"; };
-		16F10DE718A9EA7B0051AC7D /* Directory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Directory.m; sourceTree = "<group>"; };
 		16F10DE918A9EAC00051AC7D /* DirectoryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryService.h; sourceTree = "<group>"; };
 		16F10DEA18A9EAC00051AC7D /* DirectoryService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectoryService.m; sourceTree = "<group>"; };
 		16F10DED18A9F5E90051AC7D /* DirectoryItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryItemViewController.h; sourceTree = "<group>"; };
@@ -101,6 +99,8 @@
 		16F10E0118AB292D0051AC7D /* ImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageView.xib; sourceTree = "<group>"; };
 		16F10E0318AB294B0051AC7D /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
 		16F10E0418AB294B0051AC7D /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		16F10E0918AC9F720051AC7D /* Directory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Directory.h; sourceTree = "<group>"; };
+		16F10E0A18AC9F720051AC7D /* Directory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Directory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,10 +239,10 @@
 				16F10DAD18A9CB340051AC7D /* I5.xcdatamodeld */,
 				16F10DE318A9E4630051AC7D /* DirectoryModel.h */,
 				16F10DE418A9E4630051AC7D /* DirectoryModel.m */,
-				16F10DE618A9EA7B0051AC7D /* Directory.h */,
-				16F10DE718A9EA7B0051AC7D /* Directory.m */,
 				16F10DE918A9EAC00051AC7D /* DirectoryService.h */,
 				16F10DEA18A9EAC00051AC7D /* DirectoryService.m */,
+				16F10E0918AC9F720051AC7D /* Directory.h */,
+				16F10E0A18AC9F720051AC7D /* Directory.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -424,12 +424,12 @@
 				16F10DDC18A9D54C0051AC7D /* MainWindowController.m in Sources */,
 				16F10DE518A9E4630051AC7D /* DirectoryModel.m in Sources */,
 				16F10DE018A9E2490051AC7D /* DirectoryViewController.m in Sources */,
-				16F10DE818A9EA7B0051AC7D /* Directory.m in Sources */,
 				16F10DF418A9F60E0051AC7D /* ClickableBox.m in Sources */,
 				16F10DFA18AB0B7E0051AC7D /* BrowseViewController.m in Sources */,
 				16F10DAF18A9CB340051AC7D /* I5.xcdatamodeld in Sources */,
 				16F10DD918A9D31F0051AC7D /* NSObject+ActionableObject.m in Sources */,
 				16F10DA918A9CB340051AC7D /* AppDelegate.m in Sources */,
+				16F10E0B18AC9F720051AC7D /* Directory.m in Sources */,
 				16F10DFD18AB11C20051AC7D /* ImageModel.m in Sources */,
 				16F10DEB18A9EAC00051AC7D /* DirectoryService.m in Sources */,
 				16F10DD618A9CE730051AC7D /* NSViewController+MaximizedSubView.m in Sources */,
@@ -649,6 +649,7 @@
 				16F10DC818A9CB340051AC7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16F10DC918A9CB340051AC7D /* Build configuration list for PBXNativeTarget "I5Tests" */ = {
 			isa = XCConfigurationList;
@@ -657,6 +658,7 @@
 				16F10DCB18A9CB340051AC7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

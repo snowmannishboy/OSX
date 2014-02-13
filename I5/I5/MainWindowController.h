@@ -51,6 +51,8 @@ const static double DEFAULT_ZOOM_BROWSE = 0.45;
 
 @property (nonatomic, strong) IBOutlet NSSlider* zoom;
 
+@property BOOL rm_enabled;
+
 - (IBAction) _add:  (id) sender;
 - (IBAction) _back: (id) sender;
 - (IBAction) _rm:   (id) sender;
@@ -59,6 +61,7 @@ const static double DEFAULT_ZOOM_BROWSE = 0.45;
 - (IBAction) _zoom: (id) sender;
 
 - (void) dispose;
+- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context;
 
 
 @end

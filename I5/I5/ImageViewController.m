@@ -12,6 +12,8 @@
 
 @end
 
+static id _delegate;
+
 @implementation ImageViewController
 
 - (id) init {
@@ -38,5 +40,25 @@
     [_imageView setImage:nil];
 }
 
++ (void) setDelegate:(id)delegate {
+    _delegate = delegate;
+}
+
 
 @end
+
+
+@interface DelegatingScrollView : NSScrollView
+- (void) scrollWheel:(NSEvent *)theEvent;
+@end
+
+@implementation DelegatingScrollView
+
+- (void) scrollWheel:(NSEvent *)theEvent {
+    if (_delegate && [_delegate respondsToSelector:@selector(scrollWheel:)])
+        [_delegate scrollWheel:theEvent];
+    [super scrollWheel:theEvent];
+}
+
+@end
+

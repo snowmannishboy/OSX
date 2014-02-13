@@ -10,6 +10,7 @@
 #import <Quartz/Quartz.h>
 
 @class DirectoryModel;
+@class ImageModel;
 
 @interface BrowseViewController : NSViewController {
     __strong DirectoryModel         *_directory;
@@ -29,6 +30,9 @@
 
 /* Methods for "informal" delegate */
 - (void)imageBrowser:(IKImageBrowserView *)aBrowser cellWasDoubleClickedAtIndex:(NSUInteger)index;
+
+- (ImageModel*) next;
+- (ImageModel*) previous;
 
 
 // method for setting an action

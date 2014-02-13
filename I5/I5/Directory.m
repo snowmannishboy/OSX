@@ -2,7 +2,7 @@
 //  Directory.m
 //  I5
 //
-//  Created by Robert Novak on 2/10/14.
+//  Created by Robert Novak on 2/12/14.
 //  Copyright (c) 2014 Robert Novak. All rights reserved.
 //
 
@@ -11,7 +11,9 @@
 
 @implementation Directory
 
-@dynamic identifier;
 @dynamic bookmark;
+@dynamic identifier;
+@dynamic active;
+@dynamic path;
 
 @end

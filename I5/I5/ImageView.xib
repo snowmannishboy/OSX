@@ -18,7 +18,7 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="390"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <scrollView autoresizesSubviews="NO" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0c-Po-Yk6">
+                <scrollView autoresizesSubviews="NO" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0c-Po-Yk6" customClass="DelegatingScrollView">
                     <rect key="frame" x="0.0" y="0.0" width="480" height="390"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <clipView key="contentView" autoresizesSubviews="NO" id="48l-S1-38m">
@@ -50,12 +50,12 @@
                             <constraint firstItem="UXV-89-Umd" firstAttribute="leading" secondItem="48l-S1-38m" secondAttribute="leading" id="tFO-Rv-8jT"/>
                         </constraints>
                     </clipView>
-                    <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="I1o-KP-XW6">
-                        <rect key="frame" x="0.0" y="374" width="480" height="16"/>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="I1o-KP-XW6">
+                        <rect key="frame" x="-100" y="-100" width="480" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
-                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="PuQ-v3-bRM">
-                        <rect key="frame" x="465" y="0.0" width="15" height="390"/>
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="PuQ-v3-bRM">
+                        <rect key="frame" x="-100" y="-100" width="15" height="390"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>

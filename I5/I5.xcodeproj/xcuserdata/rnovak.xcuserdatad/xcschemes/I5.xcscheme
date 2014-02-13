@@ -91,6 +91,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "ImageViewer"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

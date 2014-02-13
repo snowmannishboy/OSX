@@ -8,8 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ImageViewController : NSViewController
+@class MainWindowController;
 
+@interface ImageViewController : NSViewController
 
 @property (nonatomic, strong) IBOutlet NSView* inner;
 @property (nonatomic, strong) IBOutlet NSImageView* imageView;
@@ -17,5 +18,7 @@
 
 - (void) setImage: (NSURL*) url;
 - (void) clearImage;
+
++ (void) setDelegate: (id) delegate;
 
 @end

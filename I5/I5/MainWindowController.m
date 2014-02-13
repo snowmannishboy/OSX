@@ -15,6 +15,7 @@
 #import "ImageModel.h"
 #import "ClickableBox.h"
 
+
 @interface MainWindowController ()
 
 // *private* methods
@@ -26,6 +27,9 @@
 - (void) enable: (NSControl*) control, ...;
 - (void) disable: (NSControl*) control, ...;
 - (void) transitionFrom: (NSViewController*) from to: (NSViewController*) to;
+
+- (void) moveBack;
+- (void) moveForw;
 
 @end
 
@@ -39,6 +43,8 @@
         state = directory;
         __browseZoom = DEFAULT_ZOOM_BROWSE;
         
+        _rm_enabled = YES;
+        
         _directoryController = [[DirectoryViewController alloc] init];
         _browseController = [[BrowseViewController alloc] init];
         _imageController = [[ImageViewController alloc] init];
@@ -47,7 +53,7 @@
         [ClickableBox setAction:@selector(_clickableBox:) target:self];
         [DirectoryService setAction:@selector(_directoryService:) target:self];
         [BrowseViewController setAction:@selector(_imageBrowser:) target:self];
-        
+        [ImageViewController setDelegate:self];
     
     }
     return self;
@@ -61,8 +67,21 @@
     [_directoryController add:_content];
 
     [self disable:_back, _nav, _zoom, nil];
+    
+    [_directoryController addObserver:self forKeyPath:@"selectedIndexes" options:NSKeyValueObservingOptionNew context:nil];
 
 }
+
+
+- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPath isEqual:@"selectedIndexes"]) {
+        if (state == directory) {
+            NSIndexSet* set = [change objectForKey:NSKeyValueChangeNewKey];
+            [_rm setEnabled:[set firstIndex] != NSNotFound];
+        }
+    }
+}
+
 
 
 /***************** Actions *******************/
@@ -80,9 +99,14 @@
         if (_result == NSOKButton) {
             NSArray* urls = [open URLs];
             [urls enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                DirectoryModel* model = [[DirectoryModel alloc] initWithURL:obj];
-                [_service save:model];
+                DirectoryModel* model = nil;
+                model = [_service check:[obj path]];
+                if (model == nil) {
+                    model = [[DirectoryModel alloc] initWithURL:obj];
+                    [_service save:model];
+                }
                 [_directoryController addItem:model];
+
             }];
         }
     }
@@ -106,11 +130,29 @@
 }
 
 - (IBAction)_nav:(id)sender {
-    
+    if (state == image) {
+        NSSegmentedControl* control = sender;
+        if ([control selectedSegment] == 0) {
+            [self moveBack];
+        }
+        else {
+            [self moveForw];
+        }
+    }
 }
 
 - (IBAction)_rm: (id) sender {
-    
+    if (state == directory) {
+        NSUInteger index = [[_directoryController selectedIndexes] firstIndex];
+        if (index != NSNotFound) {
+            DirectoryModel* dir = [[_directoryController content] objectAtIndex:index];
+            if (dir != nil) {
+                if ([_service remove:dir]) {
+                    [[_directoryController controller] removeObject:dir];
+                }
+            }
+        }
+    }
 }
 
 - (IBAction)_zoom:(id)sender {
@@ -160,13 +202,7 @@
 }
 
 
-/** Event Notifications **/
-
-- (void) windowWillStartLiveResize:(NSNotification *)notification {
-    if (state == image) {
-        previous = [[_imageController scrollView] documentVisibleRect];
-    }
-}
+/** Pseudo Actions **/
 
 
 - (void) windowDidResize:(NSNotification *)notification {
@@ -180,10 +216,36 @@
         
         double y = (imageBounds.size.height - scrollBounds.size.height) / 2;
         
-        //NSRect new = NSMakeRect(x, y, scrollBounds.size.width, scrollBounds.size.height);
-        
         [[[_imageController scrollView] documentView] scrollPoint:NSMakePoint(x, y)];
         
+    }
+}
+
+- (void) scrollWheel:(NSEvent *)theEvent {
+    if (state == image) {
+        if (theEvent.scrollingDeltaY > 0.1) {
+            [self moveBack];
+        }
+        else if (theEvent.scrollingDeltaY < -0.1) {
+            [self moveForw];
+        }
+    }
+}
+
+- (void) keyDown:(NSEvent *)theEvent {
+    [self interpretKeyEvents:[NSArray arrayWithObject:theEvent]];
+}
+
+- (void) moveLeft:(id)sender {
+    if (state == image) {
+        [self moveBack];
+    }
+}
+
+
+- (void) moveRight:(id)sender {
+    if (state == image) {
+        [self moveForw];
     }
 }
 
@@ -191,6 +253,25 @@
 
 
 /****************** Useful ********************/
+
+
+- (void) moveBack {
+    ImageModel* img = [_browseController previous];
+    if (img != nil) {
+        [[_imageController scrollView] setMagnification:1.0];
+        [_zoom setFloatValue:0.25];
+        [_imageController setImage:[img imageRepresentation]];
+    }
+}
+
+- (void) moveForw {
+    ImageModel* img = [_browseController next];
+    if (img != nil) {
+        [[_imageController scrollView] setMagnification:1.0];
+        [_zoom setFloatValue:0.25];
+        [_imageController setImage:[img imageRepresentation]];
+    }
+}
 
 
 - (void) enable:(NSControl *)control, ... {
@@ -245,5 +326,6 @@
 }
 
 
-
 @end
+
+

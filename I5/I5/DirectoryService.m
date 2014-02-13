@@ -31,8 +31,10 @@ static void (*callableAction)(id, SEL, id);
     
     NSFetchRequest* query = [[NSFetchRequest alloc] init];
     NSEntityDescription* sth = [NSEntityDescription entityForName:@"Directory" inManagedObjectContext:_context];
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"active = YES"];
     
     [query setEntity:sth];
+    [query setPredicate:predicate];
     
     NSArray* data = [_context executeFetchRequest:query error:&local];
     
@@ -61,6 +63,8 @@ static void (*callableAction)(id, SEL, id);
     
     [dir setIdentifier:[target identifier]];
     [dir setBookmark:[target bookmark]];
+    [dir setPath:[target path]];
+    [dir setActive:YES];
     
     if (![_context save: &local]) {
         NSLog(@"[%@] Error - %@", [self class], [local localizedDescription]);
@@ -68,6 +72,77 @@ static void (*callableAction)(id, SEL, id);
     }
     
 }
+
+- (DirectoryModel*) check:(NSString *)path {
+    DirectoryModel* __block model = nil;
+    
+    NSError* local;
+    
+    NSFetchRequest* request = [[NSFetchRequest alloc] init];
+    NSEntityDescription* desc = [NSEntityDescription entityForName:@"Directory" inManagedObjectContext:_context];
+    NSPredicate* pred = [NSPredicate predicateWithFormat:@"(path = %@) AND (active = NO)", path];
+    
+    [request setEntity:desc];
+    [request setPredicate:pred];
+    
+    NSArray* arr = [_context executeFetchRequest:request error:&local];
+    
+    if (local) {
+        NSLog(@"Error, %@", [local localizedDescription]);
+        return nil;
+    }
+    
+    [arr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        Directory* dir = obj;
+        model = [[DirectoryModel alloc] initWithData:[dir identifier] bookmark:[dir bookmark]];
+    
+        NSError* inner;
+        
+        [dir setActive:YES];
+        
+        if (![_context save: &inner]) {
+            NSLog(@"Error Updating, %@", [inner localizedDescription]);
+        }
+        
+        *stop = YES;
+    }];
+    
+    
+    return model;
+}
+
+- (BOOL) remove:(DirectoryModel *)target {
+    if (!target) return NO;
+    
+    NSError* local;
+    NSFetchRequest* request = [[NSFetchRequest alloc] init];
+    NSEntityDescription* desc = [NSEntityDescription entityForName:@"Directory" inManagedObjectContext:_context];
+    
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"identifier = %@", [target identifier]];
+    
+    [request setEntity:desc];
+    [request setPredicate:predicate];
+    
+    NSArray* arr = [_context executeFetchRequest:request error: &local];
+    
+    if (local) {
+        NSLog(@"Could not Find data in datastore: %@", [local localizedDescription]);
+        return NO;
+    }
+    
+    [arr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        Directory* dir = (Directory*)obj;
+        [dir setActive:0];
+    }];
+    
+    if (![_context save:&local]) {
+        NSLog(@"Error persisting delete, %@", [local localizedDescription]);
+        return NO;
+    }
+    
+    return YES;
+}
+
 
 + (void) setAction:(SEL)action target:(id)target {
     if (action && target) {

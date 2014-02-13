@@ -82,7 +82,7 @@
         }
     }
     
-    NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"I5.storedata"];
+    NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"95EA8B50-17ED-4707-BBEB-0FF17E29EAF8.storedata"];
     NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
     if (![coordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error]) {
         [[NSApplication sharedApplication] presentError:error];
