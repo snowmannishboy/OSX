@@ -44,10 +44,10 @@
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="UXV-89-Umd" firstAttribute="top" secondItem="48l-S1-38m" secondAttribute="top" id="2lx-lL-KB9"/>
-                            <constraint firstAttribute="bottom" secondItem="UXV-89-Umd" secondAttribute="bottom" id="6Ym-Jk-fOZ"/>
-                            <constraint firstAttribute="trailing" secondItem="UXV-89-Umd" secondAttribute="trailing" id="HJm-kc-WFe"/>
-                            <constraint firstItem="UXV-89-Umd" firstAttribute="leading" secondItem="48l-S1-38m" secondAttribute="leading" id="tFO-Rv-8jT"/>
+                            <constraint firstAttribute="centerY" secondItem="UXV-89-Umd" secondAttribute="centerY" id="7sP-mA-LCS"/>
+                            <constraint firstItem="UXV-89-Umd" firstAttribute="width" secondItem="48l-S1-38m" secondAttribute="width" id="Lw8-RW-z5s"/>
+                            <constraint firstItem="UXV-89-Umd" firstAttribute="height" secondItem="48l-S1-38m" secondAttribute="height" id="Vy5-by-1gl"/>
+                            <constraint firstAttribute="centerX" secondItem="UXV-89-Umd" secondAttribute="centerX" id="eoW-bT-ifH"/>
                         </constraints>
                     </clipView>
                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="I1o-KP-XW6">

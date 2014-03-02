@@ -37,12 +37,17 @@
     self = [super init];
     if (self) {
         NSError* local;
+        BOOL isStale = NO;
         _path = [url path];
         _display = [[NSFileManager defaultManager] displayNameAtPath:_path];
         _url = url;
         _bookmark = [url bookmarkDataWithOptions:NSURLBookmarkCreationWithSecurityScope includingResourceValuesForKeys:nil relativeToURL:nil error:&local];
         
-        if (local) {
+
+        _url = [NSURL URLByResolvingBookmarkData:_bookmark options:NSURLBookmarkResolutionWithSecurityScope relativeToURL:nil bookmarkDataIsStale:&isStale error:&local];
+    
+        
+        if (local || isStale) {
             NSLog(@"Error Mutherfucker, %@", [local localizedDescription]);
         }
         

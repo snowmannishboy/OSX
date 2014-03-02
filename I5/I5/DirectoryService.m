@@ -46,12 +46,20 @@ static void (*callableAction)(id, SEL, id);
     
     [data enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         Directory* dir = (Directory*)obj;
-        DirectoryModel* model = [[DirectoryModel alloc] initWithData:[dir identifier] bookmark:[dir bookmark]];
-        [result addObject:model];
+        if (dir != nil) {
+            DirectoryModel* model = [[DirectoryModel alloc] initWithData:[dir identifier] bookmark:[dir bookmark]];
+            [result addObject:model];
+        }
+    }];
+    
+    NSArray* sorted = [result sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        NSString* s1 = [((DirectoryModel*)obj1) display];
+        NSString* s2 = [((DirectoryModel*)obj2) display];
+        return [s2 compare:s1];
     }];
     
     
-    return result;
+    return sorted;
 }
 
 - (void) save:(DirectoryModel *)target {
@@ -60,6 +68,9 @@ static void (*callableAction)(id, SEL, id);
     
     NSError* local;
     Directory* dir = [NSEntityDescription insertNewObjectForEntityForName:@"Directory" inManagedObjectContext:_context];
+    
+    if ([target bookmark] == nil)
+        return;
     
     [dir setIdentifier:[target identifier]];
     [dir setBookmark:[target bookmark]];

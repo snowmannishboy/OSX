@@ -32,24 +32,24 @@ const static double DEFAULT_ZOOM_BROWSE = 0.45;
     } state;
     
     double __browseZoom;
-    NSRect  previous;
+    NSRect __previous;
 }
 
-@property (nonatomic, strong) DirectoryViewController* directoryController;
-@property (nonatomic, strong) BrowseViewController* browseController;
-@property (nonatomic, strong) ImageViewController* imageController;
+@property (strong) DirectoryViewController* directoryController;
+@property (strong) BrowseViewController* browseController;
+@property (strong) ImageViewController* imageController;
 
 @property (nonatomic, strong) IBOutlet DirectoryService* service;
 
-@property (nonatomic, strong) IBOutlet NSView* content;
+@property (strong) IBOutlet NSView* content;
 
-@property (nonatomic, strong) IBOutlet NSButton* add;
-@property (nonatomic, strong) IBOutlet NSButton* back;
-@property (nonatomic, strong) IBOutlet NSButton* rm;
+@property (strong) IBOutlet NSButton* add;
+@property (strong) IBOutlet NSButton* back;
+@property (strong) IBOutlet NSButton* rm;
 
-@property (nonatomic, strong) IBOutlet NSSegmentedControl* nav;
+@property (strong) IBOutlet NSSegmentedControl* nav;
 
-@property (nonatomic, strong) IBOutlet NSSlider* zoom;
+@property (strong) IBOutlet NSSlider* zoom;
 
 @property BOOL rm_enabled;
 

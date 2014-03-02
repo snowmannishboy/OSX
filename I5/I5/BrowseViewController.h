@@ -22,8 +22,9 @@
 
 @property (atomic, strong) NSIndexSet* selectedIndexes;
 
-@property (nonatomic, strong) IBOutlet NSView* inner;
-@property (nonatomic, strong) IBOutlet IKImageBrowserView* browserView;
+@property (atomic, strong) IBOutlet NSScrollView* scrollView;
+@property (atomic, strong) IBOutlet NSView* inner;
+@property (atomic, strong) IBOutlet IKImageBrowserView* browserView;
 
 - (void) clear;
 - (void) open: (DirectoryModel*) directory;
@@ -34,7 +35,7 @@
 - (ImageModel*) next;
 - (ImageModel*) previous;
 
-
+- (void) scrollToSelected;
 // method for setting an action
 
 + (void) setAction: (SEL) action target: (id) target;

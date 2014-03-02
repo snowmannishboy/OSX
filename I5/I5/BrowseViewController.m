@@ -24,9 +24,12 @@ static void (*callableAction)(id, SEL, id);
     self = [super init];
     if (self) {
         NSError* local = nil;
+        
         _fileCheck = [NSRegularExpression regularExpressionWithPattern:@"^.+\\.(png|gif|jpg|jpeg)$" options:NSRegularExpressionCaseInsensitive error:&local];
         NSArray* tl = nil;
         [[NSBundle mainBundle] loadNibNamed:@"BrowseView" owner:self topLevelObjects:&tl];
+        
+        
         for (id obj in tl)
             if ([obj isKindOfClass: [self class]])
                 return obj;
@@ -36,11 +39,14 @@ static void (*callableAction)(id, SEL, id);
 
 - (void) awakeFromNib {
     [[self view] setHidden:YES];
+    
     _images = [[NSMutableArray alloc] init];
     _importedImages = [[NSMutableArray alloc] init];
-    _selectedIndexes = [[NSIndexSet alloc] init];
-    [_browserView bind:@"selectionIndexes" toObject:self withKeyPath:@"self.selectedIndexes" options:nil];
+    
+    [_browserView bind:@"selectionIndexes" toObject:self withKeyPath:@"selectedIndexes" options:nil];
+
 }
+
 
 - (void) clear {
     [_images removeAllObjects];
@@ -99,6 +105,13 @@ static void (*callableAction)(id, SEL, id);
     return [_images objectAtIndex:index];
 }
 
+- (void) scrollToSelected {
+    NSUInteger selected = [_selectedIndexes firstIndex];
+    
+    if (selected != NSNotFound) {
+        [_browserView scrollIndexToVisible:selected];
+    }
+}
 
 - (ImageModel*) next {
     ImageModel* result = nil;

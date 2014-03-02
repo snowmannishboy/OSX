@@ -31,6 +31,8 @@
 - (void) moveBack;
 - (void) moveForw;
 
+- (void) logRect: (NSRect) rect;
+
 @end
 
 @implementation MainWindowController
@@ -124,8 +126,13 @@
         [_imageController clearImage];
         [self disable:_nav, nil];
         [self transitionFrom:_imageController to:_browseController];
+        
         [_zoom setFloatValue:__browseZoom * 2.5];
         state = browse;
+                
+        [[[_browseController scrollView] documentView] scrollPoint:__previous.origin];
+        
+        
     }
 }
 
@@ -168,6 +175,8 @@
 
 - (void) _clickableBox: (id) sender {
     if (state == directory) {
+
+        
         ClickableBox* target = sender;
         DirectoryModel* model = [target representedObject];
         [self transitionFrom:_directoryController to:_browseController];
@@ -187,14 +196,20 @@
         [directories enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             [_directoryController addItem:obj];
         }];
+        
+        [_directoryController setSelectedIndexes:[[NSIndexSet alloc] init]];
     }
 }
 
 - (void) _imageBrowser:(ImageModel *)target {
     if (state == browse) {
         state = image;
+        
+        __previous = [[_browseController scrollView] documentVisibleRect];
+        
         [self transitionFrom:_browseController to:_imageController];
         [self enable:_nav, nil];
+        
         
         [_imageController setImage:[target imageRepresentation]];
         [_zoom setFloatValue:0.25];
@@ -325,6 +340,11 @@
     }
 }
 
+- (void) logRect:(NSRect)rect {
+    NSLog(@"Height - %f", rect.size.height);
+    NSLog(@"Width - %f", rect.size.width);
+    NSLog(@"(%f, %f)", rect.origin.x, rect.origin.y);
+}
 
 @end
 

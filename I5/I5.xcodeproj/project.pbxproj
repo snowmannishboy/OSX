@@ -33,7 +33,6 @@
 		16F10DF718AB0AE60051AC7D /* BrowseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16F10DF618AB0AE60051AC7D /* BrowseView.xib */; };
 		16F10DFA18AB0B7E0051AC7D /* BrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F10DF918AB0B7E0051AC7D /* BrowseViewController.m */; };
 		16F10DFD18AB11C20051AC7D /* ImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F10DFC18AB11C20051AC7D /* ImageModel.m */; };
-		16F10DFF18AB12F60051AC7D /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F10DFE18AB12F60051AC7D /* CoreServices.framework */; };
 		16F10E0218AB292D0051AC7D /* ImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16F10E0118AB292D0051AC7D /* ImageView.xib */; };
 		16F10E0518AB294B0051AC7D /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F10E0418AB294B0051AC7D /* ImageViewController.m */; };
 		16F10E0B18AC9F720051AC7D /* Directory.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F10E0A18AC9F720051AC7D /* Directory.m */; };
@@ -50,7 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		16F10D9218A9CB340051AC7D /* I5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = I5.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		16F10D9218A9CB340051AC7D /* Image Browser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Image Browser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		16F10D9518A9CB340051AC7D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		16F10D9818A9CB340051AC7D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		16F10D9918A9CB340051AC7D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -108,7 +107,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16F10DFF18AB12F60051AC7D /* CoreServices.framework in Frameworks */,
 				16F10DD318A9CE550051AC7D /* Quartz.framework in Frameworks */,
 				16F10D9618A9CB340051AC7D /* Cocoa.framework in Frameworks */,
 			);
@@ -139,7 +137,7 @@
 		16F10D9318A9CB340051AC7D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				16F10D9218A9CB340051AC7D /* I5.app */,
+				16F10D9218A9CB340051AC7D /* Image Browser.app */,
 				16F10DB618A9CB340051AC7D /* I5Tests.xctest */,
 			);
 			name = Products;
@@ -328,7 +326,7 @@
 			);
 			name = I5;
 			productName = I5;
-			productReference = 16F10D9218A9CB340051AC7D /* I5.app */;
+			productReference = 16F10D9218A9CB340051AC7D /* Image Browser.app */;
 			productType = "com.apple.product-type.application";
 		};
 		16F10DB518A9CB340051AC7D /* I5Tests */ = {
@@ -359,6 +357,7 @@
 				ORGANIZATIONNAME = "Robert Novak";
 				TargetAttributes = {
 					16F10D9118A9CB340051AC7D = {
+						DevelopmentTeam = 92U6SCXX8Y;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 1;
@@ -565,12 +564,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = I5/I5.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Robert Novak (92U6SCXX8Y)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "I5/I5-Prefix.pch";
 				INFOPLIST_FILE = "I5/I5-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Image Browser";
+				PROVISIONING_PROFILE = "5334AFE2-B76C-4B39-A6EA-77EF961ECD29";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -580,12 +580,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = I5/I5.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Robert Novak (92U6SCXX8Y)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "I5/I5-Prefix.pch";
 				INFOPLIST_FILE = "I5/I5-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Image Browser";
+				PROVISIONING_PROFILE = "5334AFE2-B76C-4B39-A6EA-77EF961ECD29";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

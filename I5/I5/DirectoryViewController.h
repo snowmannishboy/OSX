@@ -13,9 +13,9 @@
 @property (atomic, strong) NSMutableArray   *content;
 @property (atomic, strong) NSIndexSet       *selectedIndexes;
 
-@property (nonatomic, strong) IBOutlet NSView               *inner;
-@property (nonatomic, strong) IBOutlet NSCollectionView     *collection;
-@property (nonatomic, strong) IBOutlet NSArrayController    *controller;
+@property (strong) IBOutlet NSView               *inner;
+@property (strong) IBOutlet NSCollectionView     *collection;
+@property (strong) IBOutlet NSArrayController    *controller;
 
 - (void) addItem: (id) obj;
 

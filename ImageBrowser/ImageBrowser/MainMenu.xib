@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="494" id="495"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <menu title="AMainMenu" systemMenu="main" id="29">
+            <items>
+                <menuItem title="ImageBrowser" id="56">
+                    <menu key="submenu" title="ImageBrowser" systemMenu="apple" id="57">
+                        <items>
+                            <menuItem title="About ImageBrowser" id="58">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="236">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Preferences…" keyEquivalent="," id="129"/>
+                            <menuItem isSeparatorItem="YES" id="143">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Services" id="131">
+                                <menu key="submenu" title="Services" systemMenu="services" id="130"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="144">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Hide ImageBrowser" keyEquivalent="h" id="134">
+                                <connections>
+                                    <action selector="hide:" target="-1" id="367"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hide Others" keyEquivalent="h" id="145">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-1" id="368"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show All" id="150">
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-1" id="370"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="149">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Quit ImageBrowser" keyEquivalent="q" id="136">
+                                <connections>
+                                    <action selector="terminate:" target="-3" id="449"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="View" id="295">
+                    <menu key="submenu" title="View" id="296">
+                        <items>
+                            <menuItem title="Show Toolbar" keyEquivalent="t" id="297">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="toggleToolbarShown:" target="-1" id="366"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Customize Toolbar…" id="298">
+                                <connections>
+                                    <action selector="runToolbarCustomizationPalette:" target="-1" id="365"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Window" id="19">
+                    <menu key="submenu" title="Window" systemMenu="window" id="24">
+                        <items>
+                            <menuItem title="Minimize" keyEquivalent="m" id="23">
+                                <connections>
+                                    <action selector="performMiniaturize:" target="-1" id="37"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Zoom" id="239">
+                                <connections>
+                                    <action selector="performZoom:" target="-1" id="240"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="92">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Bring All to Front" id="5">
+                                <connections>
+                                    <action selector="arrangeInFront:" target="-1" id="39"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Help" id="490">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Help" systemMenu="help" id="491">
+                        <items>
+                            <menuItem title="ImageBrowser Help" keyEquivalent="?" id="492">
+                                <connections>
+                                    <action selector="showHelp:" target="-1" id="493"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+        </menu>
+        <window title="Image Browser" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
+            <rect key="contentRect" x="335" y="390" width="805" height="497"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
+            <view key="contentView" id="372">
+                <rect key="frame" x="0.0" y="0.0" width="805" height="497"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="7Ge-28-lmj">
+                        <rect key="frame" x="0.0" y="25" width="805" height="472"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </customView>
+                    <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uNE-qd-lIn">
+                        <rect key="frame" x="635" y="7" width="150" height="10"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="150" id="Fh9-7q-K6B"/>
+                        </constraints>
+                        <sliderCell key="cell" controlSize="mini" state="on" alignment="left" minValue="0.25" maxValue="4" doubleValue="1" tickMarkPosition="above" sliderType="linear" id="1tS-Qe-BRS"/>
+                        <connections>
+                            <action selector="_zoom:" target="aLm-x6-dBn" id="QNj-vh-2Rf"/>
+                            <binding destination="aLm-x6-dBn" name="value" keyPath="self.zoomLevel" id="qcM-ar-HN6"/>
+                        </connections>
+                    </slider>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="7Ge-28-lmj" secondAttribute="trailing" id="EDV-OO-Lz2"/>
+                    <constraint firstItem="7Ge-28-lmj" firstAttribute="top" secondItem="372" secondAttribute="top" id="MLa-94-LB8"/>
+                    <constraint firstAttribute="bottom" secondItem="7Ge-28-lmj" secondAttribute="bottom" constant="25" id="erf-Om-l1c"/>
+                    <constraint firstAttribute="bottom" secondItem="uNE-qd-lIn" secondAttribute="bottom" constant="7.5" id="lt7-m3-50m"/>
+                    <constraint firstItem="uNE-qd-lIn" firstAttribute="top" secondItem="7Ge-28-lmj" secondAttribute="bottom" constant="7.5" id="rO2-G7-eDb"/>
+                    <constraint firstAttribute="trailing" secondItem="uNE-qd-lIn" secondAttribute="trailing" constant="20" id="v0l-vZ-iRP"/>
+                    <constraint firstItem="7Ge-28-lmj" firstAttribute="leading" secondItem="372" secondAttribute="leading" id="vrc-Qp-61Y"/>
+                </constraints>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="654EC5E3-D863-447F-9E7F-419DCAF032BC" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="fYR-0r-Ede">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="19744DD8-8880-443E-8CB8-99638DF10571" label="" paletteLabel="Navigate" id="e0E-wy-iXi">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="71" height="26"/>
+                        <size key="maxSize" width="122" height="28"/>
+                        <segmentedControl key="view" verticalHuggingPriority="750" id="Cte-k4-MRp">
+                            <rect key="frame" x="0.0" y="14" width="101" height="26"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <segmentedCell key="cell" alignment="left" style="texturedRounded" trackingMode="momentary" id="uEz-eM-j8C">
+                                <font key="font" metaFont="system"/>
+                                <segments>
+                                    <segment image="NSLeftFacingTriangleTemplate" width="47"/>
+                                    <segment image="NSRightFacingTriangleTemplate" width="47" tag="1"/>
+                                </segments>
+                            </segmentedCell>
+                            <connections>
+                                <action selector="_navigate:" target="aLm-x6-dBn" id="gsP-AZ-OAB"/>
+                            </connections>
+                        </segmentedControl>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="0B22478C-2B02-4ACB-9137-7252BDC4BC78" label="" paletteLabel="Remove" image="NSRemoveTemplate" id="uKZ-0r-gRY" userLabel="Toolbar Item - Remove">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="50" height="28"/>
+                        <size key="maxSize" width="50" height="32"/>
+                        <button key="view" verticalHuggingPriority="750" id="Thm-sY-QLL">
+                            <rect key="frame" x="0.0" y="14" width="50" height="28"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSRemoveTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4sB-7V-ll0">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="_remove:" target="aLm-x6-dBn" id="ctc-KZ-sfF"/>
+                            </connections>
+                        </button>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="B8FCABC9-0C23-485F-9997-CA34C869FE4F" label="Add" paletteLabel="Add" image="NSAddTemplate" id="gBU-uT-h2G">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="50" height="28"/>
+                        <size key="maxSize" width="50" height="32"/>
+                        <button key="view" verticalHuggingPriority="750" id="VCv-Ya-WBt">
+                            <rect key="frame" x="0.0" y="14" width="50" height="28"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSAddTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pro-EH-dcs">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="_add:" target="aLm-x6-dBn" id="b6b-1E-I3Z"/>
+                            </connections>
+                        </button>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="9E9B818E-7B19-4DFE-9F31-386F0E72329B" label="Back" paletteLabel="Back" image="NSLeftFacingTriangleTemplate" id="jPR-aK-xss">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="50" height="28"/>
+                        <size key="maxSize" width="50" height="32"/>
+                        <button key="view" verticalHuggingPriority="750" id="Zy9-BZ-xxD">
+                            <rect key="frame" x="0.0" y="14" width="50" height="28"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSLeftFacingTriangleTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="yMX-NR-83O">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="_back:" target="aLm-x6-dBn" id="0Jc-OL-PPB"/>
+                            </connections>
+                        </button>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="YtZ-kE-zi6"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="7bF-cz-23E"/>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="jPR-aK-xss"/>
+                    <toolbarItem reference="gBU-uT-h2G"/>
+                    <toolbarItem reference="7bF-cz-23E"/>
+                    <toolbarItem reference="e0E-wy-iXi"/>
+                    <toolbarItem reference="7bF-cz-23E"/>
+                    <toolbarItem reference="YtZ-kE-zi6"/>
+                    <toolbarItem reference="uKZ-0r-gRY"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <contentBorderThickness minY="25"/>
+        </window>
+        <customObject id="494" customClass="AppDelegate">
+            <connections>
+                <outlet property="mainController" destination="aLm-x6-dBn" id="az0-Mm-l2t"/>
+                <outlet property="window" destination="371" id="532"/>
+            </connections>
+        </customObject>
+        <customObject id="420" customClass="NSFontManager"/>
+        <customObject id="aLm-x6-dBn" customClass="MainController">
+            <connections>
+                <outlet property="add" destination="VCv-Ya-WBt" id="5O9-v4-Mlo"/>
+                <outlet property="back" destination="Zy9-BZ-xxD" id="2ue-hf-QQB"/>
+                <outlet property="contentView" destination="7Ge-28-lmj" id="ceg-hd-cq5"/>
+                <outlet property="navigate" destination="Cte-k4-MRp" id="x9D-qQ-mrN"/>
+                <outlet property="remove" destination="Thm-sY-QLL" id="wLK-CR-gTk"/>
+                <outlet property="window" destination="371" id="Tu8-Yn-F3g"/>
+                <outlet property="zoom" destination="uNE-qd-lIn" id="nnC-gf-mZx"/>
+            </connections>
+        </customObject>
+    </objects>
+    <resources>
+        <image name="NSAddTemplate" width="8" height="8"/>
+        <image name="NSLeftFacingTriangleTemplate" width="9" height="9"/>
+        <image name="NSRemoveTemplate" width="8" height="8"/>
+        <image name="NSRightFacingTriangleTemplate" width="9" height="9"/>
+    </resources>
+</document>

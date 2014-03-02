@@ -12,9 +12,9 @@
 
 @interface ImageViewController : NSViewController
 
-@property (nonatomic, strong) IBOutlet NSView* inner;
-@property (nonatomic, strong) IBOutlet NSImageView* imageView;
-@property (nonatomic, strong) IBOutlet NSScrollView* scrollView;
+@property (atomic, strong) IBOutlet NSView* inner;
+@property (atomic, strong) IBOutlet NSImageView* imageView;
+@property (atomic, strong) IBOutlet NSScrollView* scrollView;
 
 - (void) setImage: (NSURL*) url;
 - (void) clearImage;

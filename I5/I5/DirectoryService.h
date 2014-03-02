@@ -13,9 +13,9 @@
 
 @interface DirectoryService : NSObject
 
-@property (nonatomic) NSManagedObjectContext *context;
+@property NSManagedObjectContext *context;
 
-@property (nonatomic, strong) IBOutlet AppDelegate *delegate;
+@property IBOutlet AppDelegate *delegate;
 
 - (NSArray*)    load;
 - (DirectoryModel*) check: (NSString*) path;
