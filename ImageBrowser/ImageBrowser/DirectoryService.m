@@ -52,7 +52,17 @@
     [data enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         Directory* d = obj;
         DirectoryModel* model = [[DirectoryModel alloc] initWithData:[d objectID] bookmark:[d bookmark]];
-        [unsorted addObject:model];
+        if ([model url] != nil) {
+            [unsorted addObject:model];
+        }
+        else {
+            NSError* local;
+            [_context deleteObject:obj];
+            [_context save:&local];
+            if (local) {
+                NSLog(@"Image Browser, %@, %@", [self class], [local localizedDescription]);
+            }
+        }
     }];
     
     

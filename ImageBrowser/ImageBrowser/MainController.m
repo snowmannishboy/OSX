@@ -76,6 +76,20 @@
     [self disable:_navigate, _zoom, _back, nil];
 }
 
+- (void) keyDown:(NSEvent *)theEvent {
+    [self interpretKeyEvents:[NSArray arrayWithObject:theEvent]];
+}
+
+- (void) moveLeft:(id)sender {
+    if(state== image)
+        [self moveBack];
+}
+
+- (void) moveRight:(id)sender {
+    if (state == image)
+        [self moveForw];
+}
+
 
 /* IB Actions */
 
