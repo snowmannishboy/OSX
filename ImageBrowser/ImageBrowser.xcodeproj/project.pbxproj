@@ -550,7 +550,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ImageBrowser/ImageBrowser.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Robert Novak (92U6SCXX8Y)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_OPTIMIZATION_LEVEL = fast;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -559,7 +560,7 @@
 				INFOPLIST_FILE = "ImageBrowser/ImageBrowser-Info.plist";
 				LLVM_LTO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5334AFE2-B76C-4B39-A6EA-77EF961ECD29";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -569,7 +570,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = ImageBrowser/ImageBrowser.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Robert Novak (92U6SCXX8Y)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageBrowser/ImageBrowser-Prefix.pch";
@@ -577,7 +579,7 @@
 				INFOPLIST_FILE = "ImageBrowser/ImageBrowser-Info.plist";
 				LLVM_LTO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5334AFE2-B76C-4B39-A6EA-77EF961ECD29";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
